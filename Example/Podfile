@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MagazineViewController_Example' do
+  pod 'MagazineViewController', :path => '../'
+
+  target 'MagazineViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
