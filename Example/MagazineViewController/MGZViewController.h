@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+@import MagazineViewController;
 
-@interface MGZViewController : UIViewController
+@interface MGZViewController : ANPageViewController
 
 @end

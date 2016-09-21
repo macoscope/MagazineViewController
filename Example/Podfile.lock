@@ -1,0 +1,16 @@
+PODS:
+  - MagazineViewController (0.1.0)
+
+DEPENDENCIES:
+  - MagazineViewController (from `../`)
+
+EXTERNAL SOURCES:
+  MagazineViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MagazineViewController: 21b9f86a838f73e0aa130512561df7add1851147
+
+PODFILE CHECKSUM: 0c89e7a5d4941dc2262d1ac14168e6e24f919af2
+
+COCOAPODS: 1.0.1
