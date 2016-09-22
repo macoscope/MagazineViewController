@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 
 #import "ANPageIndicatorView.h"
-#import "ANPageViewController+ANFlipSwipe.h"
 #import "ANPageViewController+ANFlipSwipePrivate.h"
 #import "ANPageViewController.h"
+#import "ANPageViewController+ANFlipSwipe.h"
 #import "UINavigationController+CustomTransitions.h"
 #import "UIView+Geometry.h"
 #import "UIView+Rendering.h"
