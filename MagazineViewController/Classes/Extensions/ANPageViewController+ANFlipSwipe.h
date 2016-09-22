@@ -11,8 +11,8 @@
 @interface ANPageViewController (ANFlipSwipe)
 
 - (void)performFlipFromView:(UIView *)theFromView
-										 toView:(UIView *)theToView
-							withDirection:(ANViewAnimationDirection)aDirection;
+                     toView:(UIView *)theToView
+              withDirection:(ANViewAnimationDirection)aDirection;
 - (void)panFlipWithGesture:(UIPanGestureRecognizer *)gestureRecognizer;
 
 @end

@@ -23,8 +23,8 @@ typedef NS_ENUM(ushort, ANPushDirection) {
 @implementation UINavigationController (CustomTransitions)
 
 - (void)mgz_pushViewControllerWithModalTransition:(UIViewController *)viewController {
-    [self mgz_prepareMoveInAnimationForView:self.view.layer withDirection:ANPushDirectionUp];
-    [self pushViewController:viewController animated:NO];
+  [self mgz_prepareMoveInAnimationForView:self.view.layer withDirection:ANPushDirectionUp];
+  [self pushViewController:viewController animated:NO];
 }
 
 - (void)mgz_popViewControllerWithModalTransition {
@@ -41,12 +41,12 @@ typedef NS_ENUM(ushort, ANPushDirection) {
 
 - (void)mgz_modalTransitionBetweenCurrentViewControllerAndViewController:(UIViewController *)controller {
   UIViewController *currentViewController = self.visibleViewController;
-  
+
   [self.view.window addSubview:currentViewController.view];
   currentViewController.view.frame = CGRectOffset(currentViewController.view.frame, 0, CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]));
   [self popViewControllerAnimated:NO];
   [self.view.window bringSubviewToFront:currentViewController.view];
-  
+
   [UIView animateWithDuration:0.4 animations:^{
     currentViewController.view.transform = CGAffineTransformTranslate(currentViewController.view.transform, 0, currentViewController.view.bounds.size.height);
   } completion:^(BOOL finished) {
@@ -74,7 +74,7 @@ typedef NS_ENUM(ushort, ANPushDirection) {
       transition.subtype = kCATransitionFromLeft;
       break;
   }
-	[layer addAnimation:transition forKey:nil];
+  [layer addAnimation:transition forKey:nil];
 }
 
 #pragma mark CATransactionDelegate methods

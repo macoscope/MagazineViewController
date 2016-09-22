@@ -11,9 +11,9 @@
 #define DEFAULT_VIEW_ANIMATION_DURATION 0.35f
 
 typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
-	ANViewAnimationDirectionBackward = -1,
-	ANViewAnimationDirectionNone = 0,
-	ANViewAnimationDirectionForward = 1
+  ANViewAnimationDirectionBackward = -1,
+  ANViewAnimationDirectionNone = 0,
+  ANViewAnimationDirectionForward = 1
 };
 
 @class ANThumbnailPageViewController;

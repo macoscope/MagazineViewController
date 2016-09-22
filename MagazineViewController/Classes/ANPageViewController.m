@@ -35,20 +35,20 @@
   [super viewDidLoad];
   [self.navigationController mgz_setCustomAnimationsDelegate:self];
   //self.navigationController.delegate = self;
-  
+
   CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
   self.view.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
-  
+
   UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe:)];
   swipeRecognizer.delegate = self;
   swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
   [self.view addGestureRecognizer:swipeRecognizer];
-  
+
   swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe:)];
   swipeRecognizer.delegate = self;
   swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
   [self.view addGestureRecognizer:swipeRecognizer];
-  
+
   [self reloadPages];
 }
 
@@ -57,8 +57,8 @@
   NSUInteger count = self.pageViewControllers.count;
   NSUInteger currentIndex = self.currentPageIndex % self.pageViewControllers.count;
   NSArray<NSNumber *> *safeIndexes = @[[NSNumber numberWithUnsignedInteger:currentIndex % count],
-                                      [NSNumber numberWithUnsignedInteger:(currentIndex -1) % count],
-                                      [NSNumber numberWithUnsignedInteger:(currentIndex + 1) % count]];
+                                       [NSNumber numberWithUnsignedInteger:(currentIndex -1) % count],
+                                       [NSNumber numberWithUnsignedInteger:(currentIndex + 1) % count]];
 
   for (NSUInteger i = 0; i < self.pageViewControllers.count; i++) {
     if (![safeIndexes containsObject:[NSNumber numberWithUnsignedInteger:i]]) {
@@ -83,7 +83,7 @@
   if(!self.isViewLoaded) {
     return;
   }
-  
+
   NSUInteger currentIndex = MIN(self.currentPageIndex, [self.childViewControllers count] - 1);
 
   if (currentIndex < [self.pageViewControllers count]) {
@@ -97,20 +97,20 @@
   if (!self.isViewLoaded) {
     return;
   }
-  
+
   NSArray *viewControllers = [self.childViewControllers copy];
-  
+
   for (UIViewController *controller in viewControllers) {
     [controller willMoveToParentViewController:nil];
     [controller.view removeFromSuperview];
     [controller removeFromParentViewController];
     [self removeChildPageViewController:controller];
   }
-  
+
   for (NSUInteger pageCounter = 0; pageCounter < [self countOfPages]; pageCounter++) {
     [self loadSubControllerForPage:pageCounter];
   }
-	
+
   if ([self countOfPages] > 0) {
     NSInteger index = self.currentPageIndex < [self countOfPages] ? self.currentPageIndex : 0;
     [self setCurrentPageIndex:index animated:NO direction:ANViewAnimationDirectionNone];
@@ -135,21 +135,21 @@
 
 - (void)loadSubControllerForPage:(NSUInteger)pageCounter
 {
-	UIViewController *aPageViewController = [self makeViewControllerForPage:pageCounter];
+  UIViewController *aPageViewController = [self makeViewControllerForPage:pageCounter];
 
-	[self addChildViewController:aPageViewController];
+  [self addChildViewController:aPageViewController];
   [self addChildPageViewController:aPageViewController];
-  
-	[aPageViewController.view setFrame:self.view.bounds];
-	[self.view addSubview:aPageViewController.view];
-	[aPageViewController didMoveToParentViewController:self];
-	
-	[self configureViewController:aPageViewController forPage:pageCounter];
-	
-	if (!self.viewsStartWithIdentityTransform) {
-		//aPageViewController.view.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width, 0.0);
-	}
-	aPageViewController.view.alpha = 0.0f;
+
+  [aPageViewController.view setFrame:self.view.bounds];
+  [self.view addSubview:aPageViewController.view];
+  [aPageViewController didMoveToParentViewController:self];
+
+  [self configureViewController:aPageViewController forPage:pageCounter];
+
+  if (!self.viewsStartWithIdentityTransform) {
+    //aPageViewController.view.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width, 0.0);
+  }
+  aPageViewController.view.alpha = 0.0f;
 
   // force layout of child view controllers in the order they were added
   [aPageViewController.view layoutIfNeeded];
@@ -192,7 +192,7 @@
   if (newPageIndex >= [self.pageViewControllers count]) {
     return;
   }
-  
+
   NSUInteger currentIndex = MIN(self.currentPageIndex, [self.pageViewControllers count] - 1);
 
   UIViewController *oldDetailController = self.pageViewControllers[currentIndex];
@@ -203,19 +203,19 @@
     [newDetailController.view mgz_renderImageHalfsForFlipping];
   }
 
-	[self willTransitionToViewController:newDetailController];
-	
-	[self switchFromViewController:oldDetailController toViewController:newDetailController direction:direction animated:animated];
-  
-	self.currentPageIndex = newPageIndex;
-  
+  [self willTransitionToViewController:newDetailController];
+
+  [self switchFromViewController:oldDetailController toViewController:newDetailController direction:direction animated:animated];
+
+  self.currentPageIndex = newPageIndex;
+
 }
 
 #pragma mark - Gesture Page Animation
 
 - (void)rightSwipe:(UISwipeGestureRecognizer *)gestureRecognizer
 {
-	//	Send a message to the currently active viewController to handle a right swipe
+  //	Send a message to the currently active viewController to handle a right swipe
   if ([self countOfPages] == 1) {
     [self showAndHidePageIndicator];
   }
@@ -223,8 +223,8 @@
 
 - (void)leftSwipe:(UISwipeGestureRecognizer *)gestureRecognizer
 {
-	//	Send a message to the currently active viewController to handle a left swipe
-	
+  //	Send a message to the currently active viewController to handle a left swipe
+
   if ([self countOfPages] == 1) {
     [self showAndHidePageIndicator];
   }
@@ -234,103 +234,103 @@
 
 - (NSInteger)nextPageIndexForDirection:(ANViewAnimationDirection)direction
 {
-	NSUInteger	viewCount = [self.childViewControllers count];
+  NSUInteger	viewCount = [self.childViewControllers count];
   return (self.currentPageIndex + direction + viewCount) % viewCount;
 }
 
 - (void)transitionInDirection:(ANViewAnimationDirection)direction
 {
-	NSUInteger	viewCount = [self.childViewControllers count];
+  NSUInteger	viewCount = [self.childViewControllers count];
   if (viewCount <= 1) {
     return;
   }
-  
-	[self setCurrentPageIndex:[self nextPageIndexForDirection:direction] animated:YES direction:direction];
+
+  [self setCurrentPageIndex:[self nextPageIndexForDirection:direction] animated:YES direction:direction];
 }
 
 
 - (void)transitionBackward
 {
-	[self transitionInDirection:ANViewAnimationDirectionBackward];
+  [self transitionInDirection:ANViewAnimationDirectionBackward];
 }
 
 - (void)transitionForward
 {
-	[self transitionInDirection:ANViewAnimationDirectionForward];
+  [self transitionInDirection:ANViewAnimationDirectionForward];
 }
 
 - (UIView *)viewToTransitionFromForDirection:(ANViewAnimationDirection)direction
 {
-	UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
-	return theController.view;
+  UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
+  return theController.view;
 }
 
 - (UIView *)viewToTransitionToForDirection:(ANViewAnimationDirection)direction
 {
   if ([self.childViewControllers count] <= 1) {
-		UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
-		return theController.view;
+    UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
+    return theController.view;
   }
-  
-	UIViewController *theController = [self.childViewControllers objectAtIndex:[self nextPageIndexForDirection:direction]];
-	return theController.view;
+
+  UIViewController *theController = [self.childViewControllers objectAtIndex:[self nextPageIndexForDirection:direction]];
+  return theController.view;
 }
 
 - (void)willTransitionToViewController:(UIViewController *)viewController
 {
-  
+
 }
 
 #pragma mark - Handle the PageView Addition
 
 - (NSUInteger)countOfPages
 {
-	NSAssert(NO, @"You must implement countOfPages in your subclass.");
-	return 0;
+  NSAssert(NO, @"You must implement countOfPages in your subclass.");
+  return 0;
 }
 
 - (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
 {
-	NSAssert(NO, @"You must implement viewControllerForPage: in your subclass.");
-	return nil;
+  NSAssert(NO, @"You must implement viewControllerForPage: in your subclass.");
+  return nil;
 }
 
 - (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber
 {
-	
+
 }
 
 //	Standard swipe transition
 - (void)switchFromViewController:(UIViewController *)oldDetailController toViewController:(UIViewController *)newDetailController direction:(ANViewAnimationDirection)direction animated:(BOOL)animated
 {
-	
-	NSTimeInterval animationDuration = (animated ? DEFAULT_VIEW_ANIMATION_DURATION: 0.0f);
-	if (oldDetailController == newDetailController) {
-		[UIView animateWithDuration:animationDuration animations:^{
-			newDetailController.view.transform = CGAffineTransformIdentity;
-			newDetailController.view.alpha = 1.0f;
-		} completion:^(BOOL finished) {
+
+  NSTimeInterval animationDuration = (animated ? DEFAULT_VIEW_ANIMATION_DURATION: 0.0f);
+  if (oldDetailController == newDetailController) {
+    [UIView animateWithDuration:animationDuration animations:^{
+      newDetailController.view.transform = CGAffineTransformIdentity;
+      newDetailController.view.alpha = 1.0f;
+    } completion:^(BOOL finished) {
       [self didTransitionToViewController:newDetailController];
     }];
-		return;
-	}
+    return;
+  }
   CGFloat offset = (oldDetailController.view.mgz_width * direction);
-  
+
   newDetailController.view.transform = CGAffineTransformMakeTranslation(offset, 0.0);
-	newDetailController.view.alpha = 1.0f;
-  
+  newDetailController.view.alpha = 1.0f;
+
   [oldDetailController viewWillDisappear:animated];
   [newDetailController viewWillAppear:animated];
-  
+
   [UIView animateWithDuration:animationDuration animations:^{
-		oldDetailController.view.transform = CGAffineTransformMakeTranslation(-offset, 0.0);
+    oldDetailController.view.transform = CGAffineTransformMakeTranslation(-offset, 0.0);
     newDetailController.view.transform = CGAffineTransformIdentity;
   } completion:^(BOOL finished) {
-		if (finished) {
+    if (finished) {
       [newDetailController viewDidAppear:animated];
       [oldDetailController viewDidDisappear:animated];
-		}
-	}];
+    }
+  }];
 }
 
 - (void)addChildPageViewController:(UIViewController *)controller
@@ -339,7 +339,7 @@
   if (pages == nil) {
     pages = [NSMutableArray array];
   }
-  
+
   [pages addObject:controller];
   self.pageViewControllers = pages;
 }
@@ -358,7 +358,7 @@
 
 - (ANPageIndicatorView *)pageIndicatorView
 {
-	return nil;
+  return nil;
   if (_pageIndicatorView == nil) {
     _pageIndicatorView = [[[NSBundle mainBundle] loadNibNamed:@"ANPageIndicatorView" owner:nil options:nil] objectAtIndex:0];
     _pageIndicatorView.frame = CGRectMake(CGRectGetWidth(self.view.frame),
@@ -366,7 +366,7 @@
                                           CGRectGetWidth(_pageIndicatorView.frame),
                                           CGRectGetHeight(_pageIndicatorView.frame));
     [self.view addSubview:_pageIndicatorView];
-    
+
   }
   return _pageIndicatorView;
 }
@@ -375,11 +375,11 @@
 {
   CGRect newFrame = self.pageIndicatorView.frame;
   newFrame.origin.x = CGRectGetWidth(self.view.bounds) - (offscreen ? 0 : CGRectGetWidth(self.pageIndicatorView.frame));
-  
+
   void (^animation)() = ^{
     self.pageIndicatorView.frame = newFrame;
   };
-  
+
   if (animated) {
     [UIView animateWithDuration:0.2
                           delay:0.0
@@ -389,7 +389,7 @@
   } else {
     animation();
   }
-  
+
 }
 
 - (void)showAndHidePageIndicator
@@ -405,7 +405,7 @@
   if (![self shouldShowPageIndicator]) {
     return;
   }
-  
+
   [self.pageIndicatorView setupWithNumberOfPages:[self countOfPages] pageNumber:self.currentPageIndex];
   [self.view bringSubviewToFront:self.pageIndicatorView];
 
@@ -438,7 +438,7 @@
 {
   [self.pageIndicatorView.layer removeAllAnimations];
   [self setPageIndicatorViewOffScreen:YES animated:NO];
-  
+
   //to start animation in next loop of NSLoop
   [self performSelector:@selector(showAndHidePageIndicatorWithDelay:)
              withObject:[NSNumber numberWithFloat:0.25]
