@@ -10,8 +10,8 @@
 #import "UINavigationController+CustomTransitions.h"
 #import "ANPageIndicatorView.h"
 #import "UIView+Geometry.h"
-#import <QuartzCore/QuartzCore.h>
 #import "UIView+Rendering.h"
+@import QuartzCore;
 
 @protocol UINavigationControllerCustomAnimationsDelegate <NSObject>
 

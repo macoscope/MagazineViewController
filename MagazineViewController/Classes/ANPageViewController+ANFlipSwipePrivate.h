@@ -7,7 +7,6 @@
 //
 
 #import "ANPageViewController.h"
-@import QuartzCore;
 
 #define MARGIN	75
 #define ANGLE	90

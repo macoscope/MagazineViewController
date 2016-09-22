@@ -9,21 +9,21 @@
 #import "ANPageViewController+ANFlipSwipePrivate.h"
 @import ObjectiveC;
 
-static	char	*ANTransitionToInstanceName = "AN_viewToTransitionTo";
-static	char	*ANTransitionFromInstanceName = "AN_viewToTransitionFrom";
+static char *ANTransitionToInstanceName = "AN_viewToTransitionTo";
+static char *ANTransitionFromInstanceName = "AN_viewToTransitionFrom";
 
-static	char	*ANDirectionInstanceName = "AN_direction";
-static	char	*ANFlipFrontPageInstanceName = "AN_flipFrontPage";
-static	char	*ANPanningInstanceName = "AN_panning";
-static	char	*ANAnimationViewInstanceName = "AN_animationView";
-static	char	*ANLayerFrontInstanceName = "AN_layerFront";
-static	char	*ANLayerFacingInstanceName = "AN_layerFacing";
-static	char	*ANLayerBackInstanceName = "AN_layerBack";
-static	char	*ANLayerRevealInstanceName = "AN_layerReveal";
-static	char	*ANLayerFrontShadowInstanceName = "AN_layerFrontShadow";
-static	char	*ANLayerBackShadowInstanceName = "AN_layerBackShadow";
-static	char	*ANLayerFacingShadowInstanceName = "AN_layerFacingShadow";
-static	char	*ANLayerRevealShadowInstanceName = "AN_layerRevealShadow";
+static char *ANDirectionInstanceName = "AN_direction";
+static char *ANFlipFrontPageInstanceName = "AN_flipFrontPage";
+static char *ANPanningInstanceName = "AN_panning";
+static char *ANAnimationViewInstanceName = "AN_animationView";
+static char *ANLayerFrontInstanceName = "AN_layerFront";
+static char *ANLayerFacingInstanceName = "AN_layerFacing";
+static char *ANLayerBackInstanceName = "AN_layerBack";
+static char *ANLayerRevealInstanceName = "AN_layerReveal";
+static char *ANLayerFrontShadowInstanceName = "AN_layerFrontShadow";
+static char *ANLayerBackShadowInstanceName = "AN_layerBackShadow";
+static char *ANLayerFacingShadowInstanceName = "AN_layerFacingShadow";
+static char *ANLayerRevealShadowInstanceName = "AN_layerRevealShadow";
 
 @implementation ANPageViewController (ANFlipSwipePrivate)
 
@@ -206,6 +206,3 @@ static	char	*ANLayerRevealShadowInstanceName = "AN_layerRevealShadow";
 }
 
 @end
-
-
-
