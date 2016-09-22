@@ -7,8 +7,7 @@
 //
 
 #import "ANPageViewController.h"
-
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 #define MARGIN	75
 #define ANGLE	90
@@ -21,8 +20,8 @@ static inline double degrees (double radians) {return radians * 180/M_PI;}
 
 @interface ANPageViewController (ANFlipSwipePrivate)
 
-@property (nonatomic, retain) ANRenderableView *viewToTransitionFrom;
-@property (nonatomic, retain) ANRenderableView *viewToTransitionTo;
+@property (nonatomic, retain) UIView *viewToTransitionFrom;
+@property (nonatomic, retain) UIView *viewToTransitionTo;
 
 @property (assign) ANViewAnimationDirection direction;
 @property (assign) BOOL panning;

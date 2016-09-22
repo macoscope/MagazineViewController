@@ -7,7 +7,7 @@
 //
 
 #import "ANPageViewController+ANFlipSwipePrivate.h"
-#import <objc/runtime.h>
+@import ObjectiveC;
 
 static	char	*ANTransitionToInstanceName = "AN_viewToTransitionTo";
 static	char	*ANTransitionFromInstanceName = "AN_viewToTransitionFrom";
@@ -64,24 +64,24 @@ static	char	*ANLayerRevealShadowInstanceName = "AN_layerRevealShadow";
 
 #pragma mark - View Accessors
 
-- (ANRenderableView *)viewToTransitionTo
+- (UIView *)viewToTransitionTo
 {
 	id	theView = objc_getAssociatedObject(self, ANTransitionToInstanceName);
-	return (ANRenderableView *)theView;
+	return (UIView *)theView;
 }
 
-- (void)setViewToTransitionTo:(ANRenderableView *)newView
+- (void)setViewToTransitionTo:(UIView *)newView
 {
 	objc_setAssociatedObject(self, ANTransitionToInstanceName, newView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (ANRenderableView *)viewToTransitionFrom
+- (UIView *)viewToTransitionFrom
 {
 	id	theView = objc_getAssociatedObject(self, ANTransitionFromInstanceName);
-	return (ANRenderableView *)theView;
+	return (UIView *)theView;
 }
 
-- (void)setViewToTransitionFrom:(ANRenderableView *)newView
+- (void)setViewToTransitionFrom:(UIView *)newView
 {
 	objc_setAssociatedObject(self, ANTransitionFromInstanceName, newView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

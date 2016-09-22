@@ -8,6 +8,7 @@
 
 #import "ANPageViewController+ANFlipSwipe.h"
 #import "ANPageViewController+ANFlipSwipePrivate.h"
+#import "UIView+Rendering.h"
 
 static NSMutableArray *pendingFlips;
 static dispatch_queue_t pageFlipDelayQueue;
@@ -138,7 +139,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 }
 
 
-- (void)performFlipFromView:(ANRenderableView *)theFromView toView:(ANRenderableView *)theToView withDirection:(ANViewAnimationDirection)aDirection
+- (void)performFlipFromView:(UIView *)theFromView toView:(UIView *)theToView withDirection:(ANViewAnimationDirection)aDirection
 {
 	self.animating = YES;
 	self.viewToTransitionFrom = theFromView;

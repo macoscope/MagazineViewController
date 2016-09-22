@@ -11,6 +11,7 @@
 #import "ANPageIndicatorView.h"
 #import "UIView+Geometry.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIView+Rendering.h"
 
 @protocol UINavigationControllerCustomAnimationsDelegate <NSObject>
 
@@ -61,7 +62,7 @@
 
   for (NSUInteger i = 0; i < self.pageViewControllers.count; i++) {
     if (![safeIndexes containsObject:[NSNumber numberWithUnsignedInteger:i]]) {
-      ANViewController * controller = self.pageViewControllers[i];
+      UIViewController * controller = self.pageViewControllers[i];
       [controller.view clearImageHalfs];
     }
   }
@@ -86,7 +87,7 @@
   NSUInteger currentIndex = MIN(self.currentPageIndex, [self.childViewControllers count] - 1);
 
   if (currentIndex < [self.pageViewControllers count]) {
-    ANViewController *currentDetailController = self.pageViewControllers[currentIndex];
+    UIViewController *currentDetailController = self.pageViewControllers[currentIndex];
     [currentDetailController.view renderImageHalfsForFlipping];
   }
 }
@@ -134,7 +135,7 @@
 
 - (void)loadSubControllerForPage:(NSUInteger)pageCounter
 {
-	ANViewController *aPageViewController = [self makeViewControllerForPage:pageCounter];
+	UIViewController *aPageViewController = [self makeViewControllerForPage:pageCounter];
 
 	[self addChildViewController:aPageViewController];
   [self addChildPageViewController:aPageViewController];
@@ -161,7 +162,7 @@
   index == MIN(self.currentPageIndex + 1, [self.pageViewControllers count] - 1);
 }
 
-- (BOOL)isViewControllerVisible:(ANViewController *)controller
+- (BOOL)isViewControllerVisible:(UIViewController *)controller
 {
   NSInteger *pageIndex = [self.pageViewControllers indexOfObject:controller];
   return [self isViewControllerWithIndexVisible:pageIndex];
@@ -194,8 +195,8 @@
   
   NSUInteger currentIndex = MIN(self.currentPageIndex, [self.pageViewControllers count] - 1);
 
-  ANViewController *oldDetailController = self.pageViewControllers[currentIndex];
-  ANViewController *newDetailController = self.pageViewControllers[newPageIndex];
+  UIViewController *oldDetailController = self.pageViewControllers[currentIndex];
+  UIViewController *newDetailController = self.pageViewControllers[newPageIndex];
 
   if (animated && currentIndex != newPageIndex) {
     [oldDetailController.view renderImageHalfsForFlipping];
@@ -258,24 +259,24 @@
 	[self transitionInDirection:ANViewAnimationDirectionForward];
 }
 
-- (ANRenderableView *)viewToTransitionFromForDirection:(ANViewAnimationDirection)direction
+- (UIView *)viewToTransitionFromForDirection:(ANViewAnimationDirection)direction
 {
-	ANViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
+	UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
 	return theController.view;
 }
 
-- (ANRenderableView *)viewToTransitionToForDirection:(ANViewAnimationDirection)direction
+- (UIView *)viewToTransitionToForDirection:(ANViewAnimationDirection)direction
 {
   if ([self.childViewControllers count] <= 1) {
-		ANViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
+		UIViewController *theController = [self.childViewControllers objectAtIndex:self.currentPageIndex];
 		return theController.view;
   }
   
-	ANViewController *theController = [self.childViewControllers objectAtIndex:[self nextPageIndexForDirection:direction]];
+	UIViewController *theController = [self.childViewControllers objectAtIndex:[self nextPageIndexForDirection:direction]];
 	return theController.view;
 }
 
-- (void)willTransitionToViewController:(ANViewController *)viewController
+- (void)willTransitionToViewController:(UIViewController *)viewController
 {
   
 }
@@ -288,19 +289,19 @@
 	return 0;
 }
 
-- (ANViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
+- (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
 {
 	NSAssert(NO, @"You must implement viewControllerForPage: in your subclass.");
 	return nil;
 }
 
-- (void)configureViewController:(ANViewController *)aController forPage:(NSUInteger)pageNumber
+- (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber
 {
 	
 }
 
 //	Standard swipe transition
-- (void)switchFromViewController:(ANViewController *)oldDetailController toViewController:(ANViewController *)newDetailController direction:(ANViewAnimationDirection)direction animated:(BOOL)animated
+- (void)switchFromViewController:(UIViewController *)oldDetailController toViewController:(UIViewController *)newDetailController direction:(ANViewAnimationDirection)direction animated:(BOOL)animated
 {
 	
 	NSTimeInterval animationDuration = (animated ? DEFAULT_VIEW_ANIMATION_DURATION: 0.0f);
@@ -332,7 +333,7 @@
 	}];
 }
 
-- (void)addChildPageViewController:(ANViewController *)controller
+- (void)addChildPageViewController:(UIViewController *)controller
 {
   NSMutableArray *pages = [self.pageViewControllers mutableCopy];
   if (pages == nil) {
@@ -433,7 +434,7 @@
                    completion:nil];
 }
 
-- (void)didTransitionToViewController:(ANViewController *)viewController
+- (void)didTransitionToViewController:(UIViewController *)viewController
 {
   [self.pageIndicatorView.layer removeAllAnimations];
   [self setPageIndicatorViewOffScreen:YES animated:NO];
@@ -447,9 +448,9 @@
   NSUInteger prevIndex = (currentIndex - 1) % self.pageViewControllers.count;
   NSUInteger nextIndex = (currentIndex + 1) % self.pageViewControllers.count;
 
-  ANViewController *currentDetailController = self.pageViewControllers[currentIndex];
-  ANViewController *prevDetailController = self.pageViewControllers[prevIndex];
-  ANViewController *nextDetailController = self.pageViewControllers[nextIndex];
+  UIViewController *currentDetailController = self.pageViewControllers[currentIndex];
+  UIViewController *prevDetailController = self.pageViewControllers[prevIndex];
+  UIViewController *nextDetailController = self.pageViewControllers[nextIndex];
 
   [currentDetailController.view renderImageHalfsForFlipping];
   [prevDetailController.view renderImageHalfsForFlipping];

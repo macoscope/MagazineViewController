@@ -37,9 +37,9 @@
 	return 3;
 }
 
-- (ANViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
+- (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
 {
-	ANViewController *vc1 = [ANViewController new];
+	UIViewController *vc1 = [UIViewController new];
 	switch (pageNumber) {
   case 0:;
 			vc1.view.backgroundColor = [UIColor redColor];
@@ -49,6 +49,14 @@
 			break;
 		case 2:;
 			vc1.view.backgroundColor = [UIColor greenColor];
+			UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img"]];
+			iv.frame = vc1.view.bounds;
+			iv.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+			[vc1.view addSubview:iv];
+
+			UIView *v = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+			v.backgroundColor = [UIColor orangeColor];
+			[vc1.view addSubview:v];
 			break;
 	}
 	return vc1;

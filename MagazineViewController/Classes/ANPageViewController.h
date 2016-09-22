@@ -7,12 +7,18 @@
 //
 
 @import UIKit;
-#import "ANRenderableView.h"
-#import "ANViewController.h"
+
+#define DEFAULT_VIEW_ANIMATION_DURATION 0.35f
+
+typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
+	ANViewAnimationDirectionBackward = -1,
+	ANViewAnimationDirectionNone = 0,
+	ANViewAnimationDirectionForward = 1
+};
 
 @class ANThumbnailPageViewController;
 
-@interface ANPageViewController : ANViewController
+@interface ANPageViewController : UIViewController
 
 @property (atomic, assign) BOOL animating;
 @property (nonatomic, assign) NSUInteger currentPageIndex;
@@ -23,23 +29,23 @@
 - (void)setCurrentPageIndex:(NSUInteger)newPageIndex animated:(BOOL)animated direction:(ANViewAnimationDirection)direction;
 
 - (NSUInteger)countOfPages;
-- (ANViewController *)makeViewControllerForPage:(NSUInteger)pageNumber;
-- (void)configureViewController:(ANViewController *)aController forPage:(NSUInteger)pageNumber;
+- (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber;
+- (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber;
 
 - (NSInteger)nextPageIndexForDirection:(ANViewAnimationDirection)direction;
 - (void)transitionInDirection:(ANViewAnimationDirection)direction;
 - (void)transitionBackward;
 - (void)transitionForward;
-- (ANRenderableView *)viewToTransitionFromForDirection:(ANViewAnimationDirection)direction;
-- (ANRenderableView *)viewToTransitionToForDirection:(ANViewAnimationDirection)direction;
+- (UIView *)viewToTransitionFromForDirection:(ANViewAnimationDirection)direction;
+- (UIView *)viewToTransitionToForDirection:(ANViewAnimationDirection)direction;
 
 - (BOOL)isViewControllerWithIndexVisible:(NSInteger)index;
-- (BOOL)isViewControllerVisible:(ANViewController *)controller;
+- (BOOL)isViewControllerVisible:(UIViewController *)controller;
 
-- (void)willTransitionToViewController:(ANViewController *)viewController;
-- (void)didTransitionToViewController:(ANViewController *)viewController;
+- (void)willTransitionToViewController:(UIViewController *)viewController;
+- (void)didTransitionToViewController:(UIViewController *)viewController;
 
-- (void)switchFromViewController:(ANViewController *)oldDetailController toViewController:(ANViewController *)newDetailController direction:(ANViewAnimationDirection)direction animated:(BOOL)animated;
+- (void)switchFromViewController:(UIViewController *)oldDetailController toViewController:(UIViewController *)newDetailController direction:(ANViewAnimationDirection)direction animated:(BOOL)animated;
 
 - (void)reloadPages;
 - (void)reloadCurrentPage;
