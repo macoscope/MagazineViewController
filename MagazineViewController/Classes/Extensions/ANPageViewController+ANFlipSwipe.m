@@ -64,8 +64,8 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 		self.viewToTransitionFrom = [self viewToTransitionFromForDirection:direction];
 		self.viewToTransitionTo = [self viewToTransitionToForDirection:direction];
     
-    [self.viewToTransitionFrom renderImageHalfsForFlipping];
-    [self.viewToTransitionTo renderImageHalfsForFlipping];
+    [self.viewToTransitionFrom mgz_renderImageHalfsForFlipping];
+    [self.viewToTransitionTo mgz_renderImageHalfsForFlipping];
     
 		self.direction = direction;
 		
@@ -157,7 +157,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 	BOOL forwards = aDirection == ANViewAnimationDirectionForward;
 	
 	CGRect bounds = self.viewToTransitionFrom.bounds;
-	CGFloat scale = self.viewToTransitionFrom.renderScale;
+	CGFloat scale = self.viewToTransitionFrom.mgz_renderScale;
 	
 	CGRect upperRect = bounds;
 	upperRect.size.width = bounds.size.width / 2;
@@ -173,13 +173,17 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 	// facing Page = the other half of the current view (doesn't move, gets covered by back page during 2nd half)
 	// back Page   = the half of the next view that appears on the flipping page during 2nd half
 	// reveal Page = the other half of the next view (doesn't move, gets revealed by front page during 1st half)
-	CGImageRef pageFrontImage = forwards?self.viewToTransitionFrom.rightHalf:self.viewToTransitionFrom.leftHalf;
-	CGImageRef pageFacingImage = forwards?self.viewToTransitionFrom.leftHalf:self.viewToTransitionFrom.rightHalf;
+	CGImageRef pageFrontImage = (forwards
+															 ? self.viewToTransitionFrom.mgz_rightHalf
+															 : self.viewToTransitionFrom.mgz_leftHalf);
+	CGImageRef pageFacingImage = (forwards
+																? self.viewToTransitionFrom.mgz_leftHalf
+																: self.viewToTransitionFrom.mgz_rightHalf);
 	
 	self.viewToTransitionTo.alpha = 1.0f;
 	
-	CGImageRef pageBackImage = forwards?self.viewToTransitionTo.leftHalf:self.viewToTransitionTo.rightHalf;
-	CGImageRef pageRevealImage = forwards?self.viewToTransitionTo.rightHalf:self.viewToTransitionTo.leftHalf;
+	CGImageRef pageBackImage = forwards ? self.viewToTransitionTo.mgz_leftHalf : self.viewToTransitionTo.mgz_rightHalf;
+	CGImageRef pageRevealImage = forwards ? self.viewToTransitionTo.mgz_rightHalf : self.viewToTransitionTo.mgz_leftHalf;
 	
 	self.layerReveal.frame = (CGRect){CGPointZero, CGImageGetSize(pageRevealImage, scale) };
 	self.layerReveal.position = layerPosition;

@@ -22,24 +22,24 @@ typedef NS_ENUM(ushort, ANPushDirection) {
 
 @implementation UINavigationController (CustomTransitions)
 
--(void)pushViewControllerWithModalTransition:(UIViewController *)viewController {
-  [self prepareMoveInAnimationForView:self.view.layer withDirection:ANPushDirectionUp];
-	[self pushViewController:viewController animated:NO];
+- (void)mgz_pushViewControllerWithModalTransition:(UIViewController *)viewController {
+    [self mgz_prepareMoveInAnimationForView:self.view.layer withDirection:ANPushDirectionUp];
+    [self pushViewController:viewController animated:NO];
 }
 
--(void)popViewControllerWithModalTransition {
+- (void)mgz_popViewControllerWithModalTransition {
   NSUInteger index = [self.viewControllers indexOfObject:self.visibleViewController];
   if (index == 0) { return; }
-  [self modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:index - 1]];
+  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:index - 1]];
 }
 
--(void)popToRootViewControllerWithModalTransition {
+- (void)mgz_popToRootViewControllerWithModalTransition {
   NSUInteger index = [self.viewControllers indexOfObject:self.visibleViewController];
   if (index == 0) { return; }
-  [self modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:0]];
+  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:0]];
 }
 
--(void)modalTransitionBetweenCurrentViewControllerAndViewController:(UIViewController *)controller {
+- (void)mgz_modalTransitionBetweenCurrentViewControllerAndViewController:(UIViewController *)controller {
   UIViewController *currentViewController = self.visibleViewController;
   
   [self.view.window addSubview:currentViewController.view];
@@ -54,7 +54,7 @@ typedef NS_ENUM(ushort, ANPushDirection) {
   }];
 }
 
--(void)prepareMoveInAnimationForView:(CALayer *)layer withDirection:(ANPushDirection)direction {
+- (void)mgz_prepareMoveInAnimationForView:(CALayer *)layer withDirection:(ANPushDirection)direction {
   CATransition *transition = [CATransition animation];
   transition.duration = 0.4f;
   transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -79,21 +79,21 @@ typedef NS_ENUM(ushort, ANPushDirection) {
 
 #pragma mark CATransactionDelegate methods
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+- (void)mgz_animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
   if (flag) {
-    [self.customAnimationsDelegate navigationControllerDidFinishCustomAnimation:self];
+    [self.mgz_customAnimationsDelegate navigationControllerDidFinishCustomAnimation:self];
   }
 }
 
 #pragma mark Properties
 
-- (NSString *)customAnimationsDelegate
+- (NSString *)mgz_customAnimationsDelegate
 {
   return objc_getAssociatedObject(self, &CustomAnimationDelegateKey) ;
 }
 
-- (void)setCustomAnimationsDelegate:(id <UINavigationControllerCustomAnimationsDelegate>)delegate
+- (void)mgz_setCustomAnimationsDelegate:(id <UINavigationControllerCustomAnimationsDelegate>)delegate
 {
   objc_setAssociatedObject(self, &CustomAnimationDelegateKey, delegate, OBJC_ASSOCIATION_ASSIGN) ;
 }

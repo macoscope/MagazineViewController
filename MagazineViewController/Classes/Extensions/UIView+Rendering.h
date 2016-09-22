@@ -9,12 +9,12 @@
 @import UIKit;
 
 @interface UIView (Rendering)
-@property (nonatomic, strong, readonly) UIImage *fullRender;
-@property (nonatomic, readonly) CGImageRef leftHalf;
-@property (nonatomic, readonly) CGImageRef rightHalf;
-@property (nonatomic, readonly) CGFloat renderScale;
+@property (nonatomic, strong, readonly) UIImage *mgz_fullRender;
+@property (nonatomic, readonly) CGImageRef mgz_leftHalf;
+@property (nonatomic, readonly) CGImageRef mgz_rightHalf;
+@property (nonatomic, readonly) CGFloat mgz_renderScale;
 
-- (void)renderImageHalfsForFlipping;
-- (void)clearImageHalfs;
+- (void)mgz_renderImageHalfsForFlipping;
+- (void)mgz_clearImageHalfs;
 
 @end

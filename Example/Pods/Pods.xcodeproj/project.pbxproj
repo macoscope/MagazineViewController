@@ -206,7 +206,10 @@
 				0BC115648C9C7601A6FE69E17DE44E47 /* Products */,
 				E83903775D360A9DE1D8657C755695EB /* Targets Support Files */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		AB75C11AC43CDF79DA67B2ABC616CACA /* Support Files */ = {
 			isa = PBXGroup;

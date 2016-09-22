@@ -10,11 +10,11 @@
 
 @implementation UIView (Geometry)
 
-- (CGFloat)width {
+- (CGFloat)mgz_width {
 	return CGRectGetWidth(self.frame);
 }
 
-- (CGFloat)height {
+- (CGFloat)mgz_height {
 	return CGRectGetHeight(self.frame);
 }
 

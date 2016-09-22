@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.navigationController.customAnimationsDelegate = self;
+  [self.navigationController mgz_setCustomAnimationsDelegate:self];
   //self.navigationController.delegate = self;
   
   CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
@@ -63,7 +63,7 @@
   for (NSUInteger i = 0; i < self.pageViewControllers.count; i++) {
     if (![safeIndexes containsObject:[NSNumber numberWithUnsignedInteger:i]]) {
       UIViewController * controller = self.pageViewControllers[i];
-      [controller.view clearImageHalfs];
+      [controller.view mgz_clearImageHalfs];
     }
   }
 }
@@ -88,7 +88,7 @@
 
   if (currentIndex < [self.pageViewControllers count]) {
     UIViewController *currentDetailController = self.pageViewControllers[currentIndex];
-    [currentDetailController.view renderImageHalfsForFlipping];
+    [currentDetailController.view mgz_renderImageHalfsForFlipping];
   }
 }
 
@@ -199,8 +199,8 @@
   UIViewController *newDetailController = self.pageViewControllers[newPageIndex];
 
   if (animated && currentIndex != newPageIndex) {
-    [oldDetailController.view renderImageHalfsForFlipping];
-    [newDetailController.view renderImageHalfsForFlipping];
+    [oldDetailController.view mgz_renderImageHalfsForFlipping];
+    [newDetailController.view mgz_renderImageHalfsForFlipping];
   }
 
 	[self willTransitionToViewController:newDetailController];
@@ -314,7 +314,7 @@
     }];
 		return;
 	}
-  CGFloat offset = (oldDetailController.view.width * direction);
+  CGFloat offset = (oldDetailController.view.mgz_width * direction);
   
   newDetailController.view.transform = CGAffineTransformMakeTranslation(offset, 0.0);
 	newDetailController.view.alpha = 1.0f;
@@ -452,9 +452,9 @@
   UIViewController *prevDetailController = self.pageViewControllers[prevIndex];
   UIViewController *nextDetailController = self.pageViewControllers[nextIndex];
 
-  [currentDetailController.view renderImageHalfsForFlipping];
-  [prevDetailController.view renderImageHalfsForFlipping];
-  [nextDetailController.view renderImageHalfsForFlipping];
+  [currentDetailController.view mgz_renderImageHalfsForFlipping];
+  [prevDetailController.view mgz_renderImageHalfsForFlipping];
+  [nextDetailController.view mgz_renderImageHalfsForFlipping];
 }
 
 - (BOOL)shouldShowPageIndicator

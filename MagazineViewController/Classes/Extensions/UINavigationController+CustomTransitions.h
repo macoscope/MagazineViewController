@@ -15,12 +15,10 @@
 @end
 
 @interface UINavigationController (CustomTransitions)
--(void)pushViewControllerWithModalTransition:(UIViewController *)viewController;
--(void)popViewControllerWithModalTransition;
--(void)popToRootViewControllerWithModalTransition;
+- (void)mgz_pushViewControllerWithModalTransition:(UIViewController *)viewController;
+- (void)mgz_popViewControllerWithModalTransition;
+- (void)mgz_popToRootViewControllerWithModalTransition;
 
-- (void)setCustomAnimationsDelegate:(id <UINavigationControllerCustomAnimationsDelegate>)delegate;
-- (id <UINavigationControllerCustomAnimationsDelegate>)customAnimationsDelegate;
-
-
+- (void)mgz_setCustomAnimationsDelegate:(id <UINavigationControllerCustomAnimationsDelegate>)delegate;
+- (id <UINavigationControllerCustomAnimationsDelegate>)mgz_customAnimationsDelegate;
 @end

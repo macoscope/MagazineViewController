@@ -9,6 +9,6 @@
 @import UIKit;
 
 @interface UIView (Geometry)
-@property (nonatomic, readonly) CGFloat width;
-@property (nonatomic, readonly) CGFloat height;
+@property (nonatomic, readonly) CGFloat mgz_width;
+@property (nonatomic, readonly) CGFloat mgz_height;
 @end
