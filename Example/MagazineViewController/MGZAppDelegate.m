@@ -41,7 +41,7 @@
 {
 	self.viewControllers = @[
 													 [self newViewControllerWithColor:[UIColor redColor]],
-													 [UITableViewController new],
+													 [[UINavigationController alloc] initWithRootViewController:[UITableViewController new]],
 													 [self newImageViewController],
 													 ];
 }
