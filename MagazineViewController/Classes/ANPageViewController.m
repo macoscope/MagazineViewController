@@ -33,20 +33,16 @@
 {
   [super viewDidLoad];
   [self.navigationController mgz_setCustomAnimationsDelegate:self];
-  //self.navigationController.delegate = self;
 
   CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
   self.view.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
 
-  UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe:)];
-  swipeRecognizer.delegate = self;
-  swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-  [self.view addGestureRecognizer:swipeRecognizer];
+  UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(panFlipWithGesture:)];
+  panRecognizer.minimumNumberOfTouches = 1;
+  panRecognizer.maximumNumberOfTouches = 2;
 
-  swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe:)];
-  swipeRecognizer.delegate = self;
-  swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-  [self.view addGestureRecognizer:swipeRecognizer];
+  [self.view addGestureRecognizer:panRecognizer];
 
   [self reloadPages];
 }

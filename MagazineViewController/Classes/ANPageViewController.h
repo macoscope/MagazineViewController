@@ -8,6 +8,12 @@
 
 @import UIKit;
 
+@protocol ANPageViewControllerDataSource <NSObject>
+- (NSUInteger)countOfPages;
+- (UIViewController *)viewControllerForPage:(NSUInteger)pageNumber;
+- (BOOL)shouldDisplayPageIndicator;
+@end
+
 #define DEFAULT_VIEW_ANIMATION_DURATION 0.35f
 
 typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
@@ -19,7 +25,7 @@ typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
 @class ANThumbnailPageViewController;
 
 @interface ANPageViewController : UIViewController
-
+@property (nonatomic, weak) id <ANPageViewControllerDataSource> dataSource;
 @property (atomic, assign) BOOL animating;
 @property (nonatomic, assign) NSUInteger currentPageIndex;
 @property (nonatomic, assign) BOOL viewsStartWithIdentityTransform;
@@ -27,8 +33,6 @@ typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
 
 - (void)setCurrentPageIndex:(NSUInteger)newPageIndex animated:(BOOL)animated direction:(ANViewAnimationDirection)direction;
 
-- (NSUInteger)countOfPages;
-- (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber;
 - (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber;
 
 - (NSInteger)nextPageIndexForDirection:(ANViewAnimationDirection)direction;

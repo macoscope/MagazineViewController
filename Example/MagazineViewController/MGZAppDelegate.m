@@ -7,40 +7,82 @@
 //
 
 #import "MGZAppDelegate.h"
+@import MagazineViewController;
+
+@interface MGZAppDelegate () <ANPageViewControllerDataSource>
+@property (nonatomic, copy) NSArray *viewControllers;
+@end
 
 @implementation MGZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+	// Override point for customization after application launch.
+
+	[self setupViewControllers];
+
+	ANPageViewController *pageViewController = [ANPageViewController new];
+	pageViewController.dataSource = self;
+
+	UIViewController *vc = [UIViewController new];
+	vc.view.backgroundColor = [UIColor redColor];
+
+	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	window.rootViewController = pageViewController;
+	[window makeKeyAndVisible];
+
+	self.window = window;
+
+	return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
+- (void)setupViewControllers
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+	self.viewControllers = @[
+													 [self newViewControllerWithColor:[UIColor redColor]],
+													 [UITableViewController new],
+													 [self newImageViewController],
+													 ];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+- (UIViewController *)newViewControllerWithColor:(UIColor *)color
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+	UIViewController *vc = [UIViewController new];
+	vc.view.backgroundColor = [UIColor redColor];
+	return vc;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (UIViewController *)newImageViewController
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+	UIViewController *vc = [UIViewController new];
+
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img"]];
+	imageView.frame = vc.view.bounds;
+	imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	[vc.view addSubview:imageView];
+
+	UIView *orangeView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+	orangeView.backgroundColor = [UIColor orangeColor];
+	[vc.view addSubview:orangeView];
+
+	return vc;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+#pragma mark - ANPageViewControllerDataSource
+
+- (UIViewController *)viewControllerForPage:(NSUInteger)pageNumber
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+	return self.viewControllers[pageNumber];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
+- (NSUInteger)countOfPages
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+	return self.viewControllers.count;
+}
+
+- (BOOL)shouldDisplayPageIndicator
+{
+	return YES;
 }
 
 @end
