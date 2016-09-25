@@ -22,25 +22,29 @@ typedef NS_ENUM(ushort, MGZPushDirection) {
 - (void)mgz_popViewControllerWithModalTransition {
   NSUInteger index = [self.viewControllers indexOfObject:self.visibleViewController];
   if (index == 0) { return; }
-  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:index - 1]];
+  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:self.viewControllers[index - 1]];
 }
 
 - (void)mgz_popToRootViewControllerWithModalTransition {
   NSUInteger index = [self.viewControllers indexOfObject:self.visibleViewController];
   if (index == 0) { return; }
-  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:[self.viewControllers objectAtIndex:0]];
+  [self mgz_modalTransitionBetweenCurrentViewControllerAndViewController:self.viewControllers[0]];
 }
 
 - (void)mgz_modalTransitionBetweenCurrentViewControllerAndViewController:(UIViewController *)controller {
   UIViewController *currentViewController = self.visibleViewController;
 
   [self.view.window addSubview:currentViewController.view];
-  currentViewController.view.frame = CGRectOffset(currentViewController.view.frame, 0, CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]));
+  currentViewController.view.frame = CGRectOffset(currentViewController.view.frame,
+																									0,
+																									CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame]));
   [self popViewControllerAnimated:NO];
   [self.view.window bringSubviewToFront:currentViewController.view];
 
   [UIView animateWithDuration:0.4 animations:^{
-    currentViewController.view.transform = CGAffineTransformTranslate(currentViewController.view.transform, 0, currentViewController.view.bounds.size.height);
+    currentViewController.view.transform = CGAffineTransformTranslate(currentViewController.view.transform,
+																																			0,
+																																			currentViewController.view.bounds.size.height);
   } completion:^(BOOL finished) {
     [currentViewController.view removeFromSuperview];
   }];

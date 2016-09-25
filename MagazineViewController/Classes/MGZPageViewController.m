@@ -12,10 +12,14 @@
 
 @end
 
-@interface MGZPageViewController () <UINavigationControllerCustomAnimationsDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+@interface MGZPageViewController () <UINavigationControllerCustomAnimationsDelegate,
+UINavigationControllerDelegate,
+UIGestureRecognizerDelegate>
+
 @property (strong, nonatomic) MGZPageIndicatorView *pageIndicatorView;
 @property (strong, nonatomic, readwrite) NSArray *pageViewControllers;
 @property (nonatomic, strong) NSTimer *pageIndicatorHidingTimer;
+
 @end
 
 @implementation MGZPageViewController
@@ -28,12 +32,12 @@
 	CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
 	self.view.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
 
-	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
-																																									action:@selector(panFlipWithGesture:)];
-	panRecognizer.minimumNumberOfTouches = 1;
-	panRecognizer.maximumNumberOfTouches = 2;
+	UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self
+																																					action:@selector(panFlipWithGesture:)];
+	panGR.minimumNumberOfTouches = 1;
+	panGR.maximumNumberOfTouches = 2;
 
-	[self.view addGestureRecognizer:panRecognizer];
+	[self.view addGestureRecognizer:panGR];
 
 	[self reloadPages];
 }
@@ -54,14 +58,10 @@
 	}
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+- (BOOL)                         gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
 	return YES;
-}
-
-- (void)dealloc
-{
-	//self.navigationController.delegate = nil;
 }
 
 - (void)reloadCurrentPage
@@ -157,7 +157,9 @@
 
 #pragma mark - Accessors
 
-- (void)setCurrentPageIndex:(NSUInteger)newPageIndex animated:(BOOL)animated direction:(MGZViewAnimationDirection)direction
+- (void)setCurrentPageIndex:(NSUInteger)newPageIndex
+									 animated:(BOOL)animated
+									direction:(MGZViewAnimationDirection)direction
 {
 	if (newPageIndex >= [self.pageViewControllers count]) {
 		return;
@@ -175,7 +177,10 @@
 
 	[self willTransitionToViewController:newDetailController];
 
-	[self switchFromViewController:oldDetailController toViewController:newDetailController direction:direction animated:animated];
+	[self switchFromViewController:oldDetailController
+								toViewController:newDetailController
+											 direction:direction
+												animated:animated];
 
 	self.currentPageIndex = newPageIndex;
 
@@ -242,7 +247,8 @@
 		return theController.view;
 	}
 
-	UIViewController *theController = [self.childViewControllers objectAtIndex:[self nextPageIndexForDirection:direction]];
+	NSInteger nextPageIndex = [self nextPageIndexForDirection:direction];
+	UIViewController *theController = [self.childViewControllers objectAtIndex:nextPageIndex];
 	return theController.view;
 }
 
@@ -269,7 +275,10 @@
 }
 
 //	Standard swipe transition
-- (void)switchFromViewController:(UIViewController *)oldDetailController toViewController:(UIViewController *)newDetailController direction:(MGZViewAnimationDirection)direction animated:(BOOL)animated
+- (void)switchFromViewController:(UIViewController *)oldDetailController
+								toViewController:(UIViewController *)newDetailController
+											 direction:(MGZViewAnimationDirection)direction
+												animated:(BOOL)animated
 {
 
 	NSTimeInterval animationDuration = (animated ? DEFAULT_VIEW_ANIMATION_DURATION: 0.0f);
@@ -386,7 +395,13 @@
 									 completion:^(BOOL finished) {
 										 if (finished) {
 											 [self.pageIndicatorHidingTimer invalidate];
-											 self.pageIndicatorHidingTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(hidePageIndicator:) userInfo:nil repeats:NO];
+
+											 NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.5f
+																																				 target:self
+																																			 selector:@selector(hidePageIndicator:)
+																																			 userInfo:nil
+																																				repeats:NO];
+											 self.pageIndicatorHidingTimer = timer;
 										 }
 									 }];
 }

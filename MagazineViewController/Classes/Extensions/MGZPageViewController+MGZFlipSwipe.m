@@ -106,7 +106,8 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
       const CGFloat kMaxDuration = DEFAULT_VIEW_ANIMATION_DURATION;
       const CGFloat kMinDuration = kMaxDuration/3.0;
 
-      NSTimeInterval duration = MAX(kMinDuration, kMinDuration + (kMaxDuration - kMinDuration)*(1.0 - fabs(velocity)/kMaxVel)) ;
+      NSTimeInterval duration = MAX(kMinDuration,
+																		kMinDuration + (kMaxDuration - kMinDuration) * (1.0 - fabs(velocity) / kMaxVel));
 
       // finishAnimation
       if (shouldFallBack != self.flipFrontPage) {
@@ -131,7 +132,9 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 }
 
 
-- (void)performFlipFromView:(UIView *)theFromView toView:(UIView *)theToView withDirection:(MGZViewAnimationDirection)aDirection
+- (void)performFlipFromView:(UIView *)theFromView
+										 toView:(UIView *)theToView
+							withDirection:(MGZViewAnimationDirection)aDirection
 {
   self.animating = YES;
   self.viewToTransitionFrom = theFromView;
@@ -232,25 +235,35 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   [self.layerFront addSublayer:self.layerFrontShadow];
   self.layerFrontShadow.frame = self.layerFront.bounds;
   self.layerFrontShadow.opacity = 0.0;
-  if (forwards)
-    self.layerFrontShadow.colors = [NSArray arrayWithObjects:(id)[[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor], (id)[UIColor blackColor].CGColor, (id)[[UIColor clearColor] CGColor], nil];
-  else
-    self.layerFrontShadow.colors = [NSArray arrayWithObjects:(id)[[UIColor clearColor] CGColor], (id)[UIColor blackColor].CGColor, (id)[[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor], nil];
+	if (forwards) {
+		self.layerFrontShadow.colors = @[(id)[[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor,
+																		 (id)[UIColor blackColor].CGColor,
+																		 (id)[UIColor clearColor].CGColor];
+	}
+	else {
+		self.layerFrontShadow.colors = @[(id)[UIColor clearColor].CGColor,
+																		 (id)[UIColor blackColor].CGColor,
+																		 (id)[[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor];
+	}
   self.layerFrontShadow.startPoint = CGPointMake(forwards? 0 : 0.5, 0.5);
   self.layerFrontShadow.endPoint = CGPointMake(forwards? 0.5 : 1, 0.5);
-  self.layerFrontShadow.locations = [NSArray arrayWithObjects:[NSNumber numberWithDouble:0], [NSNumber numberWithDouble:forwards? 0.1 : 0.9], [NSNumber numberWithDouble:1], nil];
+	self.layerFrontShadow.locations = @[@0, @(forwards? 0.1 : 0.9), @1];
 
   self.layerBackShadow = [CAGradientLayer layer];
   [self.layerBack addSublayer:self.layerBackShadow];
   self.layerBackShadow.frame = self.layerBack.bounds;
   self.layerBackShadow.opacity = 0.1;
   if (forwards)
-    self.layerBackShadow.colors = [NSArray arrayWithObjects:(id)[[UIColor clearColor] CGColor], (id)[UIColor blackColor].CGColor, (id)[[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor], nil];
+    self.layerBackShadow.colors = @[(id)[UIColor clearColor].CGColor,
+																		(id)[UIColor blackColor].CGColor,
+																		(id)[[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor];
   else
-    self.layerBackShadow.colors = [NSArray arrayWithObjects:(id)[[[UIColor blackColor] colorWithAlphaComponent:0.5] CGColor], (id)[UIColor blackColor].CGColor, (id)[[UIColor clearColor] CGColor], nil];
+    self.layerBackShadow.colors = @[(id)[[UIColor blackColor] colorWithAlphaComponent:0.5].CGColor,
+																		(id)[UIColor blackColor].CGColor,
+																		(id)[UIColor clearColor].CGColor];
   self.layerBackShadow.startPoint = CGPointMake(forwards? 0.5 : 0, 0.5);
   self.layerBackShadow.endPoint = CGPointMake(forwards? 1 : 0.5, 0.5);
-  self.layerBackShadow.locations = [NSArray arrayWithObjects:[NSNumber numberWithDouble:0], [NSNumber numberWithDouble:forwards? 0.9 : 0.1], [NSNumber numberWithDouble:1], nil];
+  self.layerBackShadow.locations = @[@0, @(forwards? 0.9 : 0.1), @1];
 
   self.layerRevealShadow = [CALayer layer];
   [self.layerReveal addSublayer:self.layerRevealShadow];
@@ -376,7 +389,8 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   // Create a transaction
   [CATransaction begin];
   [CATransaction setValue:[NSNumber numberWithFloat:duration] forKey:kCATransactionAnimationDuration];
-  [CATransaction setValue:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn] forKey:kCATransactionAnimationTimingFunction];
+  [CATransaction setValue:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]
+									 forKey:kCATransactionAnimationTimingFunction];
   [CATransaction setCompletionBlock:^{
     // 2nd half of animation, once 1st half completes
     self.flipFrontPage = shouldFallBack;
@@ -466,7 +480,8 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   // Create a transaction
   [CATransaction begin];
   [CATransaction setValue:[NSNumber numberWithFloat:duration] forKey:kCATransactionAnimationDuration];
-  [CATransaction setValue:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut] forKey:kCATransactionAnimationTimingFunction];
+  [CATransaction setValue:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]
+									 forKey:kCATransactionAnimationTimingFunction];
   [CATransaction setCompletionBlock:^{
     // once 2nd half completes
     [self endFlip:!shouldFallBack];
@@ -648,7 +663,9 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
       MGZPageFlipHolder *flipHolder = [pendingFlips objectAtIndex:0];
       [pendingFlips removeObjectAtIndex:0];
       dispatch_async(dispatch_get_main_queue(), ^{
-        [self performFlipFromView:[self viewToTransitionFromForDirection:flipHolder.direction] toView:[self viewToTransitionToForDirection:flipHolder.direction] withDirection:flipHolder.direction];
+        [self performFlipFromView:[self viewToTransitionFromForDirection:flipHolder.direction]
+													 toView:[self viewToTransitionToForDirection:flipHolder.direction]
+										withDirection:flipHolder.direction];
       });
     }
   });

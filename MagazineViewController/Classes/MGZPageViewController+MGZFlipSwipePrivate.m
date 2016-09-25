@@ -29,7 +29,7 @@ static char *MGZLayerRevealShadowInstanceName = "MGZ_layerRevealShadow";
 
 - (void)setDirection:(MGZViewAnimationDirection)direction
 {
-  objc_setAssociatedObject(self, MGZDirectionInstanceName, [NSNumber numberWithInteger:direction], OBJC_ASSOCIATION_ASSIGN);
+  objc_setAssociatedObject(self, MGZDirectionInstanceName, @(direction), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (BOOL)panning
@@ -40,7 +40,7 @@ static char *MGZLayerRevealShadowInstanceName = "MGZ_layerRevealShadow";
 
 - (void)setPanning:(BOOL)panning
 {
-  objc_setAssociatedObject(self, MGZPanningInstanceName, [NSNumber numberWithBool:panning], OBJC_ASSOCIATION_ASSIGN);
+  objc_setAssociatedObject(self, MGZPanningInstanceName, @(panning), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (BOOL)flipFrontPage
@@ -51,7 +51,7 @@ static char *MGZLayerRevealShadowInstanceName = "MGZ_layerRevealShadow";
 
 - (void)setFlipFrontPage:(BOOL)theFlipFrontPage
 {
-  objc_setAssociatedObject(self, MGZFlipFrontPageInstanceName, [NSNumber numberWithBool:theFlipFrontPage], OBJC_ASSOCIATION_ASSIGN);
+  objc_setAssociatedObject(self, MGZFlipFrontPageInstanceName, @(theFlipFrontPage), OBJC_ASSOCIATION_ASSIGN);
 }
 
 #pragma mark - View Accessors
