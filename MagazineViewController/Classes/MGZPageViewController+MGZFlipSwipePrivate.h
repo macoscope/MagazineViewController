@@ -9,6 +9,11 @@
 static inline double radians (double degrees) {return degrees * M_PI/180;}
 static inline double degrees (double radians) {return radians * 180/M_PI;}
 
+@interface MGZPageViewController ()
+@property (atomic, assign) BOOL animating;
+@property (nonatomic, assign) NSUInteger currentPageIndex;
+@end
+
 @interface MGZPageViewController (MGZFlipSwipePrivate)
 
 @property (nonatomic, retain) UIView *viewToTransitionFrom;

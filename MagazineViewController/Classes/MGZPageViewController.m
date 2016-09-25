@@ -1,4 +1,5 @@
 #import "MGZPageViewController.h"
+#import "MGZPageViewController+MGZFlipSwipePrivate.h"
 #import "UINavigationController+CustomTransitions.h"
 #import "MGZPageIndicatorView.h"
 #import "UIView+Geometry.h"
@@ -12,11 +13,9 @@
 @end
 
 @interface MGZPageViewController () <UINavigationControllerCustomAnimationsDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
-
 @property (strong, nonatomic) MGZPageIndicatorView *pageIndicatorView;
 @property (strong, nonatomic, readwrite) NSArray *pageViewControllers;
 @property (nonatomic, strong) NSTimer *pageIndicatorHidingTimer;
-
 @end
 
 @implementation MGZPageViewController
@@ -124,10 +123,7 @@
 	[aPageViewController didMoveToParentViewController:self];
 
 	[self configureViewController:aPageViewController forPage:pageCounter];
-
-	if (!self.viewsStartWithIdentityTransform) {
-		//aPageViewController.view.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width, 0.0);
-	}
+	
 	aPageViewController.view.alpha = 0.0f;
 
 	// force layout of child view controllers in the order they were added

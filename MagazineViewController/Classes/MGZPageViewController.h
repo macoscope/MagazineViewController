@@ -18,12 +18,11 @@ typedef NS_ENUM(NSInteger, MGZViewAnimationDirection) {
 
 @interface MGZPageViewController : UIViewController
 @property (nonatomic, weak) id <MGZPageViewControllerDataSource> dataSource;
-@property (atomic, assign) BOOL animating;
-@property (nonatomic, assign) NSUInteger currentPageIndex;
-@property (nonatomic, assign) BOOL viewsStartWithIdentityTransform;
 @property (nonatomic, strong, readonly) NSArray *pageViewControllers;
 
-- (void)setCurrentPageIndex:(NSUInteger)newPageIndex animated:(BOOL)animated direction:(MGZViewAnimationDirection)direction;
+- (void)setCurrentPageIndex:(NSUInteger)newPageIndex
+									 animated:(BOOL)animated
+									direction:(MGZViewAnimationDirection)direction;
 
 - (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber;
 
@@ -40,7 +39,10 @@ typedef NS_ENUM(NSInteger, MGZViewAnimationDirection) {
 - (void)willTransitionToViewController:(UIViewController *)viewController;
 - (void)didTransitionToViewController:(UIViewController *)viewController;
 
-- (void)switchFromViewController:(UIViewController *)oldDetailController toViewController:(UIViewController *)newDetailController direction:(MGZViewAnimationDirection)direction animated:(BOOL)animated;
+- (void)switchFromViewController:(UIViewController *)oldDetailController
+								toViewController:(UIViewController *)newDetailController
+											 direction:(MGZViewAnimationDirection)direction
+												animated:(BOOL)animated;
 
 - (void)reloadPages;
 - (void)reloadCurrentPage;
