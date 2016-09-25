@@ -17,6 +17,10 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 
 - (void)panFlipWithGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
+	if (self.pageViewControllers.count < 2) {
+		return;
+	}
+	
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     pendingFlips = [NSMutableArray array];
