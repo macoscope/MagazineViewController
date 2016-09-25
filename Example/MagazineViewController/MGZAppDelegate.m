@@ -10,10 +10,11 @@
 @import MagazineViewController;
 
 @interface MGZAppDelegate () <MGZPageViewControllerDataSource>
-@property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, copy, readonly) NSArray *viewControllers;
 @end
 
 @implementation MGZAppDelegate
+@synthesize viewControllers = _viewControllers;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -29,21 +30,27 @@
 
 - (void)setupPageViewController
 {
-	[self setupViewControllers];
-
 	MGZPageViewController *pageViewController = [MGZPageViewController new];
 	pageViewController.dataSource = self;
 
 	self.window.rootViewController = pageViewController;
 }
 
-- (void)setupViewControllers
+#pragma mark - Accessors
+
+- (NSArray *)viewControllers
 {
-	self.viewControllers = @[
-													 [self newViewControllerWithColor:[UIColor redColor]],
-													 [[UINavigationController alloc] initWithRootViewController:[UITableViewController new]],
-													 [self newImageViewController],
-													 ];
+	if (_viewControllers) {
+		return _viewControllers;
+	}
+
+	_viewControllers = @[
+											 [self newViewControllerWithColor:[UIColor redColor]],
+											 [[UINavigationController alloc] initWithRootViewController:[UITableViewController new]],
+											 [self newImageViewController],
+											 ];
+
+	return _viewControllers;
 }
 
 #pragma mark - MGZPageViewControllerDataSource
