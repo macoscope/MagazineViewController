@@ -12,9 +12,11 @@
 
 @end
 
-@interface MGZPageViewController () <UINavigationControllerCustomAnimationsDelegate,
+@interface MGZPageViewController () <
+UINavigationControllerCustomAnimationsDelegate,
 UINavigationControllerDelegate,
-UIGestureRecognizerDelegate>
+UIGestureRecognizerDelegate
+>
 
 @property (strong, nonatomic) MGZPageIndicatorView *pageIndicatorView;
 @property (strong, nonatomic, readwrite) NSArray *pageViewControllers;
@@ -103,7 +105,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 	}
 }
 
--(MGZThumbnailPageViewController *)currentViewController
+-(UIViewController *)currentViewController
 {
 	if (self.currentPageIndex >= [self.pageViewControllers count]) {
 		return nil;

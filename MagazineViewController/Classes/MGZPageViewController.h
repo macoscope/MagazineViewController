@@ -14,8 +14,6 @@ typedef NS_ENUM(NSInteger, MGZViewAnimationDirection) {
   MGZViewAnimationDirectionForward = 1
 };
 
-@class MGZThumbnailPageViewController;
-
 @interface MGZPageViewController : UIViewController
 @property (nonatomic, weak) id <MGZPageViewControllerDataSource> dataSource;
 @property (nonatomic, strong, readonly) NSArray *pageViewControllers;
@@ -46,7 +44,7 @@ typedef NS_ENUM(NSInteger, MGZViewAnimationDirection) {
 
 - (void)reloadPages;
 - (void)reloadCurrentPage;
-- (MGZThumbnailPageViewController *)currentViewController;
+- (UIViewController *)currentViewController;
 
 - (void)showAndHidePageIndicator;
 

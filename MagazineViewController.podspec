@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'MagazineViewController/Classes/**/*'
+  s.private_header_files = 'MagazineViewController/Classes/Private/**/*.h'
   
   # s.resource_bundles = {
   #   'MagazineViewController' => ['MagazineViewController/Assets/*.png']
