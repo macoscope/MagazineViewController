@@ -1,11 +1,3 @@
-//
-//  UINavigationController+CustomTransitions.m
-// Michelin Guide
-//
-//  Created by jarek on 3/19/13.
-//  Copyright (c) 2013 Macoscope. All rights reserved.
-//
-
 #import "UINavigationController+CustomTransitions.h"
 @import QuartzCore;
 @import ObjectiveC;
@@ -13,17 +5,17 @@
 static char CustomAnimationDelegateKey;
 
 
-typedef NS_ENUM(ushort, ANPushDirection) {
-  ANPushDirectionUp,
-  ANPushDirectionDown,
-  ANPushDirectionLeft,
-  ANPushDirectionRight
+typedef NS_ENUM(ushort, MGZPushDirection) {
+  MGZPushDirectionUp,
+  MGZPushDirectionDown,
+  MGZPushDirectionLeft,
+  MGZPushDirectionRight
 };
 
 @implementation UINavigationController (CustomTransitions)
 
 - (void)mgz_pushViewControllerWithModalTransition:(UIViewController *)viewController {
-  [self mgz_prepareMoveInAnimationForView:self.view.layer withDirection:ANPushDirectionUp];
+  [self mgz_prepareMoveInAnimationForView:self.view.layer withDirection:MGZPushDirectionUp];
   [self pushViewController:viewController animated:NO];
 }
 
@@ -54,20 +46,20 @@ typedef NS_ENUM(ushort, ANPushDirection) {
   }];
 }
 
-- (void)mgz_prepareMoveInAnimationForView:(CALayer *)layer withDirection:(ANPushDirection)direction {
+- (void)mgz_prepareMoveInAnimationForView:(CALayer *)layer withDirection:(MGZPushDirection)direction {
   CATransition *transition = [CATransition animation];
   transition.duration = 0.4f;
   transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
   transition.type = kCATransitionMoveIn;
   transition.delegate = self;
   switch (direction) {
-    case ANPushDirectionDown:
+    case MGZPushDirectionDown:
       transition.subtype = kCATransitionFromBottom;
       break;
-    case ANPushDirectionUp:
+    case MGZPushDirectionUp:
       transition.subtype = kCATransitionFromTop;
       break;
-    case ANPushDirectionRight:
+    case MGZPushDirectionRight:
       transition.subtype = kCATransitionFromRight;
       break;
     default:

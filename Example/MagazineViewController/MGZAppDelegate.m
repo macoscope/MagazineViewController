@@ -9,7 +9,7 @@
 #import "MGZAppDelegate.h"
 @import MagazineViewController;
 
-@interface MGZAppDelegate () <ANPageViewControllerDataSource>
+@interface MGZAppDelegate () <MGZPageViewControllerDataSource>
 @property (nonatomic, copy) NSArray *viewControllers;
 @end
 
@@ -21,7 +21,7 @@
 
 	[self setupViewControllers];
 
-	ANPageViewController *pageViewController = [ANPageViewController new];
+	MGZPageViewController *pageViewController = [MGZPageViewController new];
 	pageViewController.dataSource = self;
 
 	UIViewController *vc = [UIViewController new];
@@ -68,7 +68,7 @@
 	return vc;
 }
 
-#pragma mark - ANPageViewControllerDataSource
+#pragma mark - MGZPageViewControllerDataSource
 
 - (UIViewController *)viewControllerForPage:(NSUInteger)pageNumber
 {

@@ -1,12 +1,4 @@
-//
-//  ANPageViewController+ANFlipSwipePrivate.h
-// Michelin Guide
-//
-//  Created by Scott Little on 21/2/13.
-//  Copyright (c) 2013 Macoscope. All rights reserved.
-//
-
-#import "ANPageViewController.h"
+#import "MGZPageViewController.h"
 
 #define MARGIN	75
 #define ANGLE	90
@@ -17,12 +9,12 @@
 static inline double radians (double degrees) {return degrees * M_PI/180;}
 static inline double degrees (double radians) {return radians * 180/M_PI;}
 
-@interface ANPageViewController (ANFlipSwipePrivate)
+@interface MGZPageViewController (MGZFlipSwipePrivate)
 
 @property (nonatomic, retain) UIView *viewToTransitionFrom;
 @property (nonatomic, retain) UIView *viewToTransitionTo;
 
-@property (assign) ANViewAnimationDirection direction;
+@property (assign) MGZViewAnimationDirection direction;
 @property (assign) BOOL panning;
 @property (assign) BOOL flipFrontPage;
 @property UIView *animationView;
@@ -37,14 +29,14 @@ static inline double degrees (double radians) {return radians * 180/M_PI;}
 
 @end
 
-@interface ANPageFlipHolder : NSObject
-@property ANViewAnimationDirection direction;
+@interface MGZPageFlipHolder : NSObject
+@property MGZViewAnimationDirection direction;
 @property BOOL hasGoneToFlip;
 @property NSTimeInterval createdAt;
-- (id)initWithDirection:(ANViewAnimationDirection)aDirection;
+- (id)initWithDirection:(MGZViewAnimationDirection)aDirection;
 @end
 
-@interface UIView (ANRenderImage)
+@interface UIView (MGZRenderImage)
 - (UIImage *)renderImageWithRect:(CGRect)frame;
 @end
 

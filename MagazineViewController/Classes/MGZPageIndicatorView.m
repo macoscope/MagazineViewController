@@ -1,14 +1,6 @@
-//
-//  ANPageIndicatorView.m
-// Michelin Guide
-//
-//  Created by Rafal Augustyniak on 09.10.2013.
-//  Copyright (c) 2013 Macoscope. All rights reserved.
-//
+#import "MGZPageIndicatorView.h"
 
-#import "ANPageIndicatorView.h"
-
-@interface ANPageIndicatorView ()
+@interface MGZPageIndicatorView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *pageNumberLabel;
@@ -17,7 +9,7 @@
 
 @end
 
-@implementation ANPageIndicatorView
+@implementation MGZPageIndicatorView
 
 - (void)setupWithNumberOfPages:(NSInteger)numberOfPages pageNumber:(NSInteger)pageNumber
 {

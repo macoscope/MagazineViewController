@@ -1,11 +1,3 @@
-//
-//  UIView.h
-// Michelin Guide
-//
-//  Created by Jarosław Pendowski on 24.06.2013.
-//  Copyright (c) 2013 Macoscope. All rights reserved.
-//
-
 @import UIKit;
 
 @interface UIView (Rendering)

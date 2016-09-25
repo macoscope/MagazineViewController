@@ -1,13 +1,5 @@
-//
-//  ANPageViewController+ANFlipSwipe.m
-// Michelin Guide
-//
-//  Created by Scott Little on 6/2/13.
-//  Copyright (c) 2013 Bartosz Ciechanowski. All rights reserved.
-//
-
-#import "ANPageViewController+ANFlipSwipe.h"
-#import "ANPageViewController+ANFlipSwipePrivate.h"
+#import "MGZPageViewController+MGZFlipSwipe.h"
+#import "MGZPageViewController+MGZFlipSwipePrivate.h"
 #import "UIView+Rendering.h"
 
 static NSMutableArray *pendingFlips;
@@ -18,7 +10,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   return CGSizeMake(CGImageGetWidth(imgRef) / scale, CGImageGetHeight(imgRef) / scale);
 }
 
-@implementation ANPageViewController (ANFlipSwipe)
+@implementation MGZPageViewController (MGZFlipSwipe)
 
 #pragma mark - Action Methods
 
@@ -36,20 +28,20 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   CGPoint translation = [gestureRecognizer translationInView:self.view];
 
   if (!self.panning && !self.animating && state == UIGestureRecognizerStateChanged && ABS(translation.x) > 5) {
-    ANViewAnimationDirection direction = ANViewAnimationDirectionNone;
+    MGZViewAnimationDirection direction = MGZViewAnimationDirectionNone;
     CGPoint velocity = [gestureRecognizer velocityInView:self.view];
     if (velocity.x < 0.0f) {
-      direction = ANViewAnimationDirectionForward;
+      direction = MGZViewAnimationDirectionForward;
     }
     else if (velocity.x > 0.0f) {
-      direction = ANViewAnimationDirectionBackward;
+      direction = MGZViewAnimationDirectionBackward;
     }
 
     if (self.animating) {
       dispatch_sync(pageFlipDelayQueue, ^{
         [self removeOldPendingFlips];
         //	Always adds a new held flip to the list
-        ANPageFlipHolder *flipHolder = [[ANPageFlipHolder alloc] initWithDirection:direction];
+        MGZPageFlipHolder *flipHolder = [[MGZPageFlipHolder alloc] initWithDirection:direction];
         [pendingFlips addObject:flipHolder];
       });
       return;
@@ -103,11 +95,11 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 
       if (velocity < -kMinimumForceFlipVelocity) {
         // Detected a swipe to the left
-        shouldFallBack = self.direction == ANViewAnimationDirectionBackward;
+        shouldFallBack = self.direction == MGZViewAnimationDirectionBackward;
       }
       else if (velocity > kMinimumForceFlipVelocity) {
         // Detected a swipe to the right
-        shouldFallBack = self.direction == ANViewAnimationDirectionForward;
+        shouldFallBack = self.direction == MGZViewAnimationDirectionForward;
       }
 
       const CGFloat kMaxVel = 3000.0;
@@ -139,7 +131,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 }
 
 
-- (void)performFlipFromView:(UIView *)theFromView toView:(UIView *)theToView withDirection:(ANViewAnimationDirection)aDirection
+- (void)performFlipFromView:(UIView *)theFromView toView:(UIView *)theToView withDirection:(MGZViewAnimationDirection)aDirection
 {
   self.animating = YES;
   self.viewToTransitionFrom = theFromView;
@@ -151,10 +143,10 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 
 #pragma mark - Layer Construction
 
-- (void)updateLayerImagesForDirection:(ANViewAnimationDirection)aDirection
+- (void)updateLayerImagesForDirection:(MGZViewAnimationDirection)aDirection
 {
 
-  BOOL forwards = aDirection == ANViewAnimationDirectionForward;
+  BOOL forwards = aDirection == MGZViewAnimationDirectionForward;
 
   CGRect bounds = self.viewToTransitionFrom.bounds;
   CGFloat scale = self.viewToTransitionFrom.mgz_renderScale;
@@ -199,7 +191,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   [self.layerBack setContents:(__bridge id)pageBackImage];
 }
 
-- (void)buildLayers:(ANViewAnimationDirection)aDirection
+- (void)buildLayers:(MGZViewAnimationDirection)aDirection
 {
   UIView *containerView = [self.viewToTransitionFrom superview];
 
@@ -209,7 +201,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   [containerView insertSubview:self.animationView aboveSubview:self.viewToTransitionTo];
   [containerView bringSubviewToFront:self.animationView];
 
-  BOOL forwards = aDirection == ANViewAnimationDirectionForward;
+  BOOL forwards = aDirection == MGZViewAnimationDirectionForward;
   self.layerReveal = [CALayer layer];
   self.layerReveal.anchorPoint = CGPointMake(forwards? 0 : 1, 0.5);
   [self.animationView.layer addSublayer:self.layerReveal];
@@ -297,7 +289,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   // Determine where we are in our page turn animation
   // 0 - 1 means flipping the front-side of the page
   // 1 - 2 means flipping the back-side of the page
-  BOOL isForward = (self.direction == ANViewAnimationDirectionForward);
+  BOOL isForward = (self.direction == MGZViewAnimationDirectionForward);
 
   CGFloat halfWidth = self.view.frame.size.width / 2;
   CGFloat progress = transition.x / halfWidth * (isForward? -1 : 1);
@@ -340,7 +332,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 
 #pragma mark - Flipping!
 
-- (void)startFlipWithDirection:(ANViewAnimationDirection)aDirection
+- (void)startFlipWithDirection:(MGZViewAnimationDirection)aDirection
 {
   self.direction = aDirection;
   self.flipFrontPage = YES;
@@ -354,7 +346,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
 - (void)removeOldPendingFlips
 {
   NSMutableArray *removeFlips = [NSMutableArray array];
-  for (ANPageFlipHolder *aHolder in pendingFlips) {
+  for (MGZPageFlipHolder *aHolder in pendingFlips) {
     NSTimeInterval timeDiff = ([[NSDate date] timeIntervalSinceReferenceDate] - aHolder.createdAt);
     //	If it should flip or is older than 2 seconds we dispose of it
     if (timeDiff > 1.0f) {
@@ -393,7 +385,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   }];
 
   // Create the animation
-  BOOL forwards = [self direction] == ANViewAnimationDirectionForward;
+  BOOL forwards = [self direction] == MGZViewAnimationDirectionForward;
   NSString *rotationKey = @"transform.rotation.y";
   double factor = (shouldFallBack? -1 : 1) * (forwards? -1 : 1) * M_PI / 180;
 
@@ -485,7 +477,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   }];
 
   // Create the animation
-  BOOL forwards = [self direction] == ANViewAnimationDirectionForward;
+  BOOL forwards = [self direction] == MGZViewAnimationDirectionForward;
   NSString *rotationKey = @"transform.rotation.y";
   double factor = (shouldFallBack? -1 : 1) * (forwards? -1 : 1) * M_PI / 180;
 
@@ -603,7 +595,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   CATransform3D tHalf1 = CATransform3DIdentity;
 
   // rotate away from viewer
-  BOOL isForward = (self.direction == ANViewAnimationDirectionForward);
+  BOOL isForward = (self.direction == MGZViewAnimationDirectionForward);
   tHalf1 = CATransform3DRotate(tHalf1, radians(ANGLE * progress * (isForward? -1 : 1)), 0, 1, 0);
 
   return tHalf1;
@@ -614,7 +606,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
   CATransform3D tHalf2 = CATransform3DIdentity;
 
   // rotate away from viewer
-  BOOL isForward = (self.direction == ANViewAnimationDirectionForward);
+  BOOL isForward = (self.direction == MGZViewAnimationDirectionForward);
   tHalf2 = CATransform3DRotate(tHalf2, radians(ANGLE * (1 - progress)) * (isForward? 1 : -1), 0, 1, 0);
 
   return tHalf2;
@@ -653,7 +645,7 @@ static inline CGSize CGImageGetSize(CGImageRef imgRef, CGFloat scale)
     [self removeOldPendingFlips];
     //	Go ahead and process the call and remove this pending flip
     if (pendingFlips.count > 0) {
-      ANPageFlipHolder *flipHolder = [pendingFlips objectAtIndex:0];
+      MGZPageFlipHolder *flipHolder = [pendingFlips objectAtIndex:0];
       [pendingFlips removeObjectAtIndex:0];
       dispatch_async(dispatch_get_main_queue(), ^{
         [self performFlipFromView:[self viewToTransitionFromForDirection:flipHolder.direction] toView:[self viewToTransitionToForDirection:flipHolder.direction] withDirection:flipHolder.direction];
