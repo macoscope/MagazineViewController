@@ -17,23 +17,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// Override point for customization after application launch.
+	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	[window makeKeyAndVisible];
 
+	self.window = window;
+
+	[self setupPageViewController];
+
+	return YES;
+}
+
+- (void)setupPageViewController
+{
 	[self setupViewControllers];
 
 	MGZPageViewController *pageViewController = [MGZPageViewController new];
 	pageViewController.dataSource = self;
 
-	UIViewController *vc = [UIViewController new];
-	vc.view.backgroundColor = [UIColor redColor];
-
-	UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-	window.rootViewController = pageViewController;
-	[window makeKeyAndVisible];
-
-	self.window = window;
-
-	return YES;
+	self.window.rootViewController = pageViewController;
 }
 
 - (void)setupViewControllers
@@ -44,6 +45,25 @@
 													 [self newImageViewController],
 													 ];
 }
+
+#pragma mark - MGZPageViewControllerDataSource
+
+- (UIViewController *)viewControllerForPage:(NSUInteger)pageNumber
+{
+	return self.viewControllers[pageNumber];
+}
+
+- (NSUInteger)countOfPages
+{
+	return self.viewControllers.count;
+}
+
+- (BOOL)shouldDisplayPageIndicator
+{
+	return YES;
+}
+
+#pragma mark - Helpers
 
 - (UIViewController *)newViewControllerWithColor:(UIColor *)color
 {
@@ -66,23 +86,6 @@
 	[vc.view addSubview:orangeView];
 
 	return vc;
-}
-
-#pragma mark - MGZPageViewControllerDataSource
-
-- (UIViewController *)viewControllerForPage:(NSUInteger)pageNumber
-{
-	return self.viewControllers[pageNumber];
-}
-
-- (NSUInteger)countOfPages
-{
-	return self.viewControllers.count;
-}
-
-- (BOOL)shouldDisplayPageIndicator
-{
-	return YES;
 }
 
 @end
