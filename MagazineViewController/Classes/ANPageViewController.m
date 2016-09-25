@@ -22,7 +22,6 @@
 @interface ANPageViewController () <UINavigationControllerCustomAnimationsDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) ANPageIndicatorView *pageIndicatorView;
-@property (nonatomic) BOOL dataLoaded;
 @property (strong, nonatomic, readwrite) NSArray *pageViewControllers;
 @property (nonatomic, strong) NSTimer *pageIndicatorHidingTimer;
 
@@ -117,14 +116,6 @@
   }
 }
 
-- (void)setDataLoaded
-{
-  self.dataLoaded = YES;
-  if ([self shouldShowPageIndicator]) {
-    [self showAndHidePageIndicatorWithDelay:[NSNumber numberWithFloat:0.3]];
-  }
-}
-
 -(ANThumbnailPageViewController *)currentViewController
 {
   if (self.currentPageIndex >= [self.pageViewControllers count]) {
@@ -169,11 +160,6 @@
 }
 
 #pragma mark - Subclasses mocks
-
-- (NSArray *)articlesForPage:(NSUInteger)pageNumber
-{
-  assert(NO);
-}
 
 - (NSString *)layoutStringForPage:(NSUInteger)pageNumber
 {
@@ -285,14 +271,12 @@
 
 - (NSUInteger)countOfPages
 {
-  NSAssert(NO, @"You must implement countOfPages in your subclass.");
-  return 0;
+  return [self.dataSource countOfPages];
 }
 
 - (UIViewController *)makeViewControllerForPage:(NSUInteger)pageNumber
 {
-  NSAssert(NO, @"You must implement viewControllerForPage: in your subclass.");
-  return nil;
+  return [self.dataSource viewControllerForPage:pageNumber];
 }
 
 - (void)configureViewController:(UIViewController *)aController forPage:(NSUInteger)pageNumber
@@ -358,9 +342,9 @@
 
 - (ANPageIndicatorView *)pageIndicatorView
 {
-  return nil;
   if (_pageIndicatorView == nil) {
-    _pageIndicatorView = [[[NSBundle mainBundle] loadNibNamed:@"ANPageIndicatorView" owner:nil options:nil] objectAtIndex:0];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    _pageIndicatorView = [[bundle loadNibNamed:@"ANPageIndicatorView" owner:nil options:nil] objectAtIndex:0];
     _pageIndicatorView.frame = CGRectMake(CGRectGetWidth(self.view.frame),
                                           roundf(CGRectGetHeight(self.view.frame)/2),
                                           CGRectGetWidth(_pageIndicatorView.frame),
@@ -459,7 +443,7 @@
 
 - (BOOL)shouldShowPageIndicator
 {
-  return self.pageIndicatorEnabled && self.dataLoaded && [[self articlesForPage:0] count];
+  return [self.dataSource shouldDisplayPageIndicator];
 }
 
 
@@ -467,7 +451,6 @@
 
 - (void)navigationControllerDidFinishCustomAnimation:(UINavigationController *)navigationController
 {
-  self.pageIndicatorEnabled = YES;
   [self showAndHidePageIndicator];
 }
 

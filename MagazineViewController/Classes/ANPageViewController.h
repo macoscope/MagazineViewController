@@ -22,7 +22,6 @@ typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
 
 @property (atomic, assign) BOOL animating;
 @property (nonatomic, assign) NSUInteger currentPageIndex;
-@property (nonatomic) BOOL pageIndicatorEnabled;
 @property (nonatomic, assign) BOOL viewsStartWithIdentityTransform;
 @property (nonatomic, strong, readonly) NSArray *pageViewControllers;
 
@@ -51,7 +50,6 @@ typedef NS_ENUM(NSInteger, ANViewAnimationDirection) {
 - (void)reloadCurrentPage;
 - (ANThumbnailPageViewController *)currentViewController;
 
-- (void)setDataLoaded;
 - (void)showAndHidePageIndicator;
 
 @end

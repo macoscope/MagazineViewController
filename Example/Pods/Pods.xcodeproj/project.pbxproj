@@ -7,30 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EAC4E5208FB4A9AF5E744239B8C3D93 /* UINavigationController+CustomTransitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B9B86AC46480AD7013DDE54EC747F7 /* UINavigationController+CustomTransitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20EE608A6DCCEA9DC913F1A66F5E1878 /* ANPageIndicatorView.xib in Sources */ = {isa = PBXBuildFile; fileRef = DFCC4C6AA5B7ED600648CE2A4090E649 /* ANPageIndicatorView.xib */; };
+		1CB97FDA1E9DDC6B9E94CB606E864EC5 /* ThumbnailPageIndicator.png in Sources */ = {isa = PBXBuildFile; fileRef = AF73D1734F6974BE9FFD3D53BF821C16 /* ThumbnailPageIndicator.png */; };
+		26A4D6E8EFDA7888ABDB454F51A99382 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		2BAFBE2786793B4A4B0D89B52573911C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		2DE66E680C26224A60926C61ABFFE972 /* UINavigationController+CustomTransitions.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDFE83DA1A7D2B3CF79EFB8AE1C7955 /* UINavigationController+CustomTransitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30AA79257E70E6F3EF5ED94DAC978CCC /* Pods-MagazineViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AE0ADEF50E9E13F963928F9E58C972 /* Pods-MagazineViewController_Tests-dummy.m */; };
-		536D4E41564BF55619B1FC0A21CCD097 /* ANPageViewController+ANFlipSwipePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA1D388C0BA9425576C7B32F2BA275B /* ANPageViewController+ANFlipSwipePrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76C6A4D38E49BD4F37F0EC20193ED1BF /* ANPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59D0991F647C6AA96E3F54A7038BEEB /* ANPageIndicatorView.m */; };
-		7EC9C89895E56063B7CD82D5DA2681D8 /* ANPageViewController+ANFlipSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A1E9B30573A09EC3FB650F7A36AF7 /* ANPageViewController+ANFlipSwipe.m */; };
-		87817C53DBEDB758BDF6BA1F96D1EDF8 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C4CFC9D357C4BF77EC3F0070745B98 /* ANPageViewController.m */; };
+		3772E393D08E0AC9485C831D6DFDE7CC /* UINavigationController+CustomTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2FADE7FE7D77F2953D2BA6F70F3EA7 /* UINavigationController+CustomTransitions.m */; };
+		49EE1930E9083A424AE796F34E253756 /* ANPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9B067969C6456FA95E10AF40297DC5 /* ANPageViewController.m */; };
+		53E32A3ABB26550EFB4F3B4F4F6EFCD0 /* ANPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F907F4A2BB58CA1B4273AC2A3081620A /* ANPageIndicatorView.m */; };
+		6592273CDCA9D3C68FBDD02090FFED51 /* ANPageViewController+ANFlipSwipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 669B94B233618D17EFBF341353555B28 /* ANPageViewController+ANFlipSwipe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B92CDF479DC2EEB51E7D95DB08C3A55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		94AFDDEC61190F337ACFE49E13E0EBBC /* ANPageIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 877DFA23C4B5572B88B7356F120853AA /* ANPageIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96DA347BDF8483C955AA63439F0F4AD6 /* UIView+Rendering.h in Headers */ = {isa = PBXBuildFile; fileRef = F10C6DBB777A81FEA601309778E7CF36 /* UIView+Rendering.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D65461DFEF37353D06752FA3378A789 /* ANPageViewController+ANFlipSwipePrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0908F97E0060E3CDEAEE481F3C8BE5 /* ANPageViewController+ANFlipSwipePrivate.m */; };
-		A1F48AC9D5B432187CF9EA4C3BD035B1 /* UINavigationController+CustomTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AB2004AF7005B78AE8D533BE2E9B72 /* UINavigationController+CustomTransitions.m */; };
+		9C7C1A513459F9CCE7C0213B7B12D172 /* UIView+Rendering.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF4FD070BA34A25E28A69BAAF5DC57 /* UIView+Rendering.m */; };
+		9D91AD2F1FA5CE33DEE8439C6CF463C7 /* MagazineViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A979BDB156D4DE054C37D1D0A978C883 /* MagazineViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DBA1241D34FDA11556DFF1C5E414E11 /* ANPageIndicatorView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 75C67C31E8612956C08F96E75F807428 /* ANPageIndicatorView.xib */; };
+		A0B4536457B1ABF61393285F54E4F512 /* ANPageIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 36032AC16F5ABC4F57DF0CB4CEFAD586 /* ANPageIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3C3F2E1D624172C6B6C7CD99222B37B /* Pods-MagazineViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB8CB64B7B550FC534E9DFC7F25491FC /* Pods-MagazineViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B378EDB7C1ACD790DCBCF379FF487028 /* UIView+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BFAB21DA19EFD03332C52272BC7330 /* UIView+Geometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A53FEBEC16CEA33271B253C242455C7E /* MagazineViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42AD7BE74667E2D4146D79B46D2A9 /* MagazineViewController-dummy.m */; };
+		B8A46576FC0C377172E3A8A401017650 /* UIView+Rendering.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B1FA2C888B3E397C518D8F7EF67DDD /* UIView+Rendering.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBD227041E2418990DC81AB2B994EF22 /* Pods-MagazineViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5809A65188E06B610CC1BE73B6F9DB9 /* Pods-MagazineViewController_Example-dummy.m */; };
-		BE76EB71C5060AEEE92DFF72F747F660 /* UIView+Rendering.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D395478E1316D8469EE6E76043B4B /* UIView+Rendering.m */; };
-		C45D4F820D025E3298557C0859927FC3 /* ANPageViewController+ANFlipSwipe.h in Headers */ = {isa = PBXBuildFile; fileRef = EE4AD9ACFE1A45BCD81D7D86046B8B77 /* ANPageViewController+ANFlipSwipe.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C515F2D73323086CC091A22AA9AAC049 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = C33994E5B52DC30E7565392F603C4986 /* UIView+Geometry.m */; };
+		C58A23C07299CB3A8B7F4A1447CD9BA8 /* ANPageViewController+ANFlipSwipePrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07F9D3D7BD88FC50F753A10CDFD743 /* ANPageViewController+ANFlipSwipePrivate.m */; };
+		C604E3494F19DE8B5FDE752CA7104214 /* UIView+Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3FE140F305A01694E53FDBD8E82294 /* UIView+Geometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7E9501717C97AE31E69F75798DDD178 /* ANPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB994357228007F9411937E6CC3651B /* ANPageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAF9F6AE9F6F1BED771A09244195A57A /* Pods-MagazineViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49D309B67F206A441B28669CE51B0A63 /* Pods-MagazineViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFC7B9536BCB9A2D2C8EC313FB450FDE /* ANPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD8E2B967DB45B9794C8BC46B853E63 /* ANPageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2789B21C8DBFF6A8A8C0DC280980504 /* MagazineViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A979BDB156D4DE054C37D1D0A978C883 /* MagazineViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9923ECD01B25A27A5CB320F34B59457 /* MagazineViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42AD7BE74667E2D4146D79B46D2A9 /* MagazineViewController-dummy.m */; };
-		F9BB3291522B4D6E5E863213D9B15623 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		D3D6C9B74E1DEC5125E807684D90A4FF /* ANPageViewController+ANFlipSwipePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3558B0831EA2C684EBAF5B0552CDAB6C /* ANPageViewController+ANFlipSwipePrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD056648E30B7F0EAD6545D345E7F215 /* ANPageViewController+ANFlipSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5BD4A4B72BCD74BAA95C097065A919 /* ANPageViewController+ANFlipSwipe.m */; };
+		EDFCC4F7CDE1A41A57BFEBBD2C55312E /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9026B4926E77BF583148F74729504D58 /* UIView+Geometry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1FEA0E214E9544E283530EB45CC86C73;
+			remoteGlobalIDString = E05B0071EE4FF6985AA3D4B0EDACE173;
 			remoteInfo = MagazineViewController;
 		};
 /* End PBXContainerItemProxy section */
@@ -46,50 +47,51 @@
 /* Begin PBXFileReference section */
 		1034D9B56D942BCE4375BE239B7FDED9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1746B2C3E7D3E93F67F44B3330219BD2 /* Pods-MagazineViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MagazineViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		17B1FA2C888B3E397C518D8F7EF67DDD /* UIView+Rendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Rendering.h"; sourceTree = "<group>"; };
 		284FC8FCA65B0BDFBF6A726B3FD3AE62 /* Pods-MagazineViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagazineViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		29BFAB21DA19EFD03332C52272BC7330 /* UIView+Geometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
+		3558B0831EA2C684EBAF5B0552CDAB6C /* ANPageViewController+ANFlipSwipePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANPageViewController+ANFlipSwipePrivate.h"; sourceTree = "<group>"; };
+		36032AC16F5ABC4F57DF0CB4CEFAD586 /* ANPageIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ANPageIndicatorView.h; sourceTree = "<group>"; };
 		366E8EB4A70BBD8914ADC37ED24549B8 /* Pods-MagazineViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagazineViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		47B9B86AC46480AD7013DDE54EC747F7 /* UINavigationController+CustomTransitions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomTransitions.h"; sourceTree = "<group>"; };
 		49D309B67F206A441B28669CE51B0A63 /* Pods-MagazineViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MagazineViewController_Example-umbrella.h"; sourceTree = "<group>"; };
 		4D46D7C57731152702524829DF65EFF9 /* Pods-MagazineViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagazineViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4ED42AD7BE74667E2D4146D79B46D2A9 /* MagazineViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MagazineViewController-dummy.m"; sourceTree = "<group>"; };
-		54AB2004AF7005B78AE8D533BE2E9B72 /* UINavigationController+CustomTransitions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomTransitions.m"; sourceTree = "<group>"; };
 		55A4D51D7868E38831A4A13A714B8BDD /* MagazineViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagazineViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CD8BAFA8D04737B5442E64E3E7B73A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BFA99EADE1CD77A5F93C5CC02DB1A0A /* Pods-MagazineViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagazineViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		669B94B233618D17EFBF341353555B28 /* ANPageViewController+ANFlipSwipe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANPageViewController+ANFlipSwipe.h"; sourceTree = "<group>"; };
 		6A7F4153E9F9FDE651D9BBDB011CF0AB /* Pods-MagazineViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagazineViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6D0908F97E0060E3CDEAEE481F3C8BE5 /* ANPageViewController+ANFlipSwipePrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ANPageViewController+ANFlipSwipePrivate.m"; sourceTree = "<group>"; };
+		6F5BD4A4B72BCD74BAA95C097065A919 /* ANPageViewController+ANFlipSwipe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ANPageViewController+ANFlipSwipe.m"; sourceTree = "<group>"; };
+		75C67C31E8612956C08F96E75F807428 /* ANPageIndicatorView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ANPageIndicatorView.xib; sourceTree = "<group>"; };
 		786D39F8DBB32EAA2595BCAC70D6A1E2 /* Pods-MagazineViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MagazineViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7C6115F16EAAFE7B5A1DB5F0BDDACBE5 /* Pods-MagazineViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MagazineViewController_Example.modulemap"; sourceTree = "<group>"; };
 		8045EE9363BA808AABFF603DE6F71962 /* MagazineViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MagazineViewController.modulemap; sourceTree = "<group>"; };
 		80C630F39F0491FFB1DD1AF2D09BEFC7 /* Pods-MagazineViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MagazineViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		846A1E9B30573A09EC3FB650F7A36AF7 /* ANPageViewController+ANFlipSwipe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ANPageViewController+ANFlipSwipe.m"; sourceTree = "<group>"; };
-		877DFA23C4B5572B88B7356F120853AA /* ANPageIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ANPageIndicatorView.h; sourceTree = "<group>"; };
-		8AA1D388C0BA9425576C7B32F2BA275B /* ANPageViewController+ANFlipSwipePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANPageViewController+ANFlipSwipePrivate.h"; sourceTree = "<group>"; };
+		8E07F9D3D7BD88FC50F753A10CDFD743 /* ANPageViewController+ANFlipSwipePrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ANPageViewController+ANFlipSwipePrivate.m"; sourceTree = "<group>"; };
+		9026B4926E77BF583148F74729504D58 /* UIView+Geometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E5DD5696F7193F4F4E6828534BA2AF5 /* Pods-MagazineViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MagazineViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		9EB994357228007F9411937E6CC3651B /* ANPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ANPageViewController.h; sourceTree = "<group>"; };
+		9F3FE140F305A01694E53FDBD8E82294 /* UIView+Geometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
 		A238EC70A1F36103DE47D2E195133387 /* Pods-MagazineViewController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagazineViewController_Example-resources.sh"; sourceTree = "<group>"; };
 		A5809A65188E06B610CC1BE73B6F9DB9 /* Pods-MagazineViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MagazineViewController_Example-dummy.m"; sourceTree = "<group>"; };
 		A979BDB156D4DE054C37D1D0A978C883 /* MagazineViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagazineViewController-umbrella.h"; sourceTree = "<group>"; };
+		ADDFE83DA1A7D2B3CF79EFB8AE1C7955 /* UINavigationController+CustomTransitions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomTransitions.h"; sourceTree = "<group>"; };
 		AEC2748FB0A08F196B9E2692FF93C0EC /* Pods_MagazineViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagazineViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF73D1734F6974BE9FFD3D53BF821C16 /* ThumbnailPageIndicator.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = ThumbnailPageIndicator.png; sourceTree = "<group>"; };
 		B36038038656792CF89FBA984717223A /* MagazineViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MagazineViewController.xcconfig; sourceTree = "<group>"; };
-		B59D0991F647C6AA96E3F54A7038BEEB /* ANPageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ANPageIndicatorView.m; sourceTree = "<group>"; };
 		B8A576B466BC26467E08298B013DD6EC /* Pods_MagazineViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagazineViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AE0ADEF50E9E13F963928F9E58C972 /* Pods-MagazineViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MagazineViewController_Tests-dummy.m"; sourceTree = "<group>"; };
 		C24A7238879443137BF17C1FFEEE785E /* MagazineViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagazineViewController-prefix.pch"; sourceTree = "<group>"; };
-		C33994E5B52DC30E7565392F603C4986 /* UIView+Geometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CFFF3396C2ECBA6E8E9BE9F7523E926D /* Pods-MagazineViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MagazineViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D116A6271585CE2606E5D776E9EC06A9 /* Pods-MagazineViewController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MagazineViewController_Tests-resources.sh"; sourceTree = "<group>"; };
-		D22D395478E1316D8469EE6E76043B4B /* UIView+Rendering.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Rendering.m"; sourceTree = "<group>"; };
-		DFCC4C6AA5B7ED600648CE2A4090E649 /* ANPageIndicatorView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ANPageIndicatorView.xib; sourceTree = "<group>"; };
 		E0403373A55D77FF8059C52EB62E3116 /* Pods-MagazineViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MagazineViewController_Tests.modulemap"; sourceTree = "<group>"; };
-		E8C4CFC9D357C4BF77EC3F0070745B98 /* ANPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ANPageViewController.m; sourceTree = "<group>"; };
+		E6AF4FD070BA34A25E28A69BAAF5DC57 /* UIView+Rendering.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Rendering.m"; sourceTree = "<group>"; };
 		EB5E52D9AAA1906D33EDEB1234A6A18F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8CB64B7B550FC534E9DFC7F25491FC /* Pods-MagazineViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MagazineViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		EE4AD9ACFE1A45BCD81D7D86046B8B77 /* ANPageViewController+ANFlipSwipe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANPageViewController+ANFlipSwipe.h"; sourceTree = "<group>"; };
-		F10C6DBB777A81FEA601309778E7CF36 /* UIView+Rendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Rendering.h"; sourceTree = "<group>"; };
-		FAD8E2B967DB45B9794C8BC46B853E63 /* ANPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ANPageViewController.h; sourceTree = "<group>"; };
+		EB9B067969C6456FA95E10AF40297DC5 /* ANPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ANPageViewController.m; sourceTree = "<group>"; };
+		F907F4A2BB58CA1B4273AC2A3081620A /* ANPageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ANPageIndicatorView.m; sourceTree = "<group>"; };
+		FF2FADE7FE7D77F2953D2BA6F70F3EA7 /* UINavigationController+CustomTransitions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomTransitions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		247D359D3EE81678FEA512C211C33D99 /* Frameworks */ = {
+		7C7ACC1597EF9E38092014D407A16900 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9BB3291522B4D6E5E863213D9B15623 /* Foundation.framework in Frameworks */,
+				26A4D6E8EFDA7888ABDB454F51A99382 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,14 +132,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1809051F47196907028BB02EDDC845F1 /* MagazineViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B0BE673DDB19C1AB4768AFCA1D8E0A92 /* Classes */,
-			);
-			path = MagazineViewController;
-			sourceTree = "<group>";
-		};
 		239E5BA8ADAD1435C4E8701C45A0E762 /* Pods-MagazineViewController_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,21 +148,6 @@
 			);
 			name = "Pods-MagazineViewController_Example";
 			path = "Target Support Files/Pods-MagazineViewController_Example";
-			sourceTree = "<group>";
-		};
-		2D26CD85362C292346D6689392616DC1 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EE4AD9ACFE1A45BCD81D7D86046B8B77 /* ANPageViewController+ANFlipSwipe.h */,
-				846A1E9B30573A09EC3FB650F7A36AF7 /* ANPageViewController+ANFlipSwipe.m */,
-				47B9B86AC46480AD7013DDE54EC747F7 /* UINavigationController+CustomTransitions.h */,
-				54AB2004AF7005B78AE8D533BE2E9B72 /* UINavigationController+CustomTransitions.m */,
-				29BFAB21DA19EFD03332C52272BC7330 /* UIView+Geometry.h */,
-				C33994E5B52DC30E7565392F603C4986 /* UIView+Geometry.m */,
-				F10C6DBB777A81FEA601309778E7CF36 /* UIView+Rendering.h */,
-				D22D395478E1316D8469EE6E76043B4B /* UIView+Rendering.m */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -206,10 +185,7 @@
 				0BC115648C9C7601A6FE69E17DE44E47 /* Products */,
 				E83903775D360A9DE1D8657C755695EB /* Targets Support Files */,
 			);
-			indentWidth = 2;
 			sourceTree = "<group>";
-			tabWidth = 2;
-			usesTabs = 0;
 		};
 		AB75C11AC43CDF79DA67B2ABC616CACA /* Support Files */ = {
 			isa = PBXGroup;
@@ -225,29 +201,38 @@
 			path = "Example/Pods/Target Support Files/MagazineViewController";
 			sourceTree = "<group>";
 		};
-		B0BE673DDB19C1AB4768AFCA1D8E0A92 /* Classes */ = {
+		ABFE0C88E3C15F83D64C40CD374221DB /* MagazineViewController */ = {
 			isa = PBXGroup;
 			children = (
-				877DFA23C4B5572B88B7356F120853AA /* ANPageIndicatorView.h */,
-				B59D0991F647C6AA96E3F54A7038BEEB /* ANPageIndicatorView.m */,
-				DFCC4C6AA5B7ED600648CE2A4090E649 /* ANPageIndicatorView.xib */,
-				FAD8E2B967DB45B9794C8BC46B853E63 /* ANPageViewController.h */,
-				E8C4CFC9D357C4BF77EC3F0070745B98 /* ANPageViewController.m */,
-				8AA1D388C0BA9425576C7B32F2BA275B /* ANPageViewController+ANFlipSwipePrivate.h */,
-				6D0908F97E0060E3CDEAEE481F3C8BE5 /* ANPageViewController+ANFlipSwipePrivate.m */,
-				2D26CD85362C292346D6689392616DC1 /* Extensions */,
+				BAE3300E5014CF8CD4387CA8297BF725 /* Classes */,
 			);
-			path = Classes;
+			path = MagazineViewController;
 			sourceTree = "<group>";
 		};
 		B272700B9D17D7B95BCBF5FBA027E013 /* MagazineViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1809051F47196907028BB02EDDC845F1 /* MagazineViewController */,
+				ABFE0C88E3C15F83D64C40CD374221DB /* MagazineViewController */,
 				AB75C11AC43CDF79DA67B2ABC616CACA /* Support Files */,
 			);
 			name = MagazineViewController;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		BAE3300E5014CF8CD4387CA8297BF725 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				36032AC16F5ABC4F57DF0CB4CEFAD586 /* ANPageIndicatorView.h */,
+				F907F4A2BB58CA1B4273AC2A3081620A /* ANPageIndicatorView.m */,
+				75C67C31E8612956C08F96E75F807428 /* ANPageIndicatorView.xib */,
+				9EB994357228007F9411937E6CC3651B /* ANPageViewController.h */,
+				EB9B067969C6456FA95E10AF40297DC5 /* ANPageViewController.m */,
+				3558B0831EA2C684EBAF5B0552CDAB6C /* ANPageViewController+ANFlipSwipePrivate.h */,
+				8E07F9D3D7BD88FC50F753A10CDFD743 /* ANPageViewController+ANFlipSwipePrivate.m */,
+				AF73D1734F6974BE9FFD3D53BF821C16 /* ThumbnailPageIndicator.png */,
+				EDF52EBD5126B0EFC8B3A8B7EEDA5381 /* Extensions */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -275,6 +260,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		EDF52EBD5126B0EFC8B3A8B7EEDA5381 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				669B94B233618D17EFBF341353555B28 /* ANPageViewController+ANFlipSwipe.h */,
+				6F5BD4A4B72BCD74BAA95C097065A919 /* ANPageViewController+ANFlipSwipe.m */,
+				ADDFE83DA1A7D2B3CF79EFB8AE1C7955 /* UINavigationController+CustomTransitions.h */,
+				FF2FADE7FE7D77F2953D2BA6F70F3EA7 /* UINavigationController+CustomTransitions.m */,
+				9F3FE140F305A01694E53FDBD8E82294 /* UIView+Geometry.h */,
+				9026B4926E77BF583148F74729504D58 /* UIView+Geometry.m */,
+				17B1FA2C888B3E397C518D8F7EF67DDD /* UIView+Rendering.h */,
+				E6AF4FD070BA34A25E28A69BAAF5DC57 /* UIView+Rendering.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -294,41 +294,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A150E6EB519991F5D3FBE09DA1D821B9 /* Headers */ = {
+		9F084258E6F8FB8E5499AD76D5B028F2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AFDDEC61190F337ACFE49E13E0EBBC /* ANPageIndicatorView.h in Headers */,
-				C45D4F820D025E3298557C0859927FC3 /* ANPageViewController+ANFlipSwipe.h in Headers */,
-				536D4E41564BF55619B1FC0A21CCD097 /* ANPageViewController+ANFlipSwipePrivate.h in Headers */,
-				EFC7B9536BCB9A2D2C8EC313FB450FDE /* ANPageViewController.h in Headers */,
-				F2789B21C8DBFF6A8A8C0DC280980504 /* MagazineViewController-umbrella.h in Headers */,
-				1EAC4E5208FB4A9AF5E744239B8C3D93 /* UINavigationController+CustomTransitions.h in Headers */,
-				B378EDB7C1ACD790DCBCF379FF487028 /* UIView+Geometry.h in Headers */,
-				96DA347BDF8483C955AA63439F0F4AD6 /* UIView+Rendering.h in Headers */,
+				A0B4536457B1ABF61393285F54E4F512 /* ANPageIndicatorView.h in Headers */,
+				6592273CDCA9D3C68FBDD02090FFED51 /* ANPageViewController+ANFlipSwipe.h in Headers */,
+				D3D6C9B74E1DEC5125E807684D90A4FF /* ANPageViewController+ANFlipSwipePrivate.h in Headers */,
+				C7E9501717C97AE31E69F75798DDD178 /* ANPageViewController.h in Headers */,
+				9D91AD2F1FA5CE33DEE8439C6CF463C7 /* MagazineViewController-umbrella.h in Headers */,
+				2DE66E680C26224A60926C61ABFFE972 /* UINavigationController+CustomTransitions.h in Headers */,
+				C604E3494F19DE8B5FDE752CA7104214 /* UIView+Geometry.h in Headers */,
+				B8A46576FC0C377172E3A8A401017650 /* UIView+Rendering.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1FEA0E214E9544E283530EB45CC86C73 /* MagazineViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D613D8688E361D54116726A35223C3C7 /* Build configuration list for PBXNativeTarget "MagazineViewController" */;
-			buildPhases = (
-				85EB2666ED90A07F7A10932099B0D4B9 /* Sources */,
-				247D359D3EE81678FEA512C211C33D99 /* Frameworks */,
-				A150E6EB519991F5D3FBE09DA1D821B9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MagazineViewController;
-			productName = MagazineViewController;
-			productReference = 55A4D51D7868E38831A4A13A714B8BDD /* MagazineViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		4155EAF5E248D44A202DCE4DDB92BC7D /* Pods-MagazineViewController_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDE3A2F6EFAAC90FDECB1CCD09CC5C8C /* Build configuration list for PBXNativeTarget "Pods-MagazineViewController_Tests" */;
@@ -364,6 +347,23 @@
 			productReference = B8A576B466BC26467E08298B013DD6EC /* Pods_MagazineViewController_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E05B0071EE4FF6985AA3D4B0EDACE173 /* MagazineViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0493554348DA57383AAE06C19F200491 /* Build configuration list for PBXNativeTarget "MagazineViewController" */;
+			buildPhases = (
+				4190F61905698B81AF6F302F0540BF91 /* Sources */,
+				7C7ACC1597EF9E38092014D407A16900 /* Frameworks */,
+				9F084258E6F8FB8E5499AD76D5B028F2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagazineViewController;
+			productName = MagazineViewController;
+			productReference = 55A4D51D7868E38831A4A13A714B8BDD /* MagazineViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -385,7 +385,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FEA0E214E9544E283530EB45CC86C73 /* MagazineViewController */,
+				E05B0071EE4FF6985AA3D4B0EDACE173 /* MagazineViewController */,
 				916874EA2F40528FBBF744F84F9ABF75 /* Pods-MagazineViewController_Example */,
 				4155EAF5E248D44A202DCE4DDB92BC7D /* Pods-MagazineViewController_Tests */,
 			);
@@ -401,19 +401,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85EB2666ED90A07F7A10932099B0D4B9 /* Sources */ = {
+		4190F61905698B81AF6F302F0540BF91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76C6A4D38E49BD4F37F0EC20193ED1BF /* ANPageIndicatorView.m in Sources */,
-				20EE608A6DCCEA9DC913F1A66F5E1878 /* ANPageIndicatorView.xib in Sources */,
-				7EC9C89895E56063B7CD82D5DA2681D8 /* ANPageViewController+ANFlipSwipe.m in Sources */,
-				9D65461DFEF37353D06752FA3378A789 /* ANPageViewController+ANFlipSwipePrivate.m in Sources */,
-				87817C53DBEDB758BDF6BA1F96D1EDF8 /* ANPageViewController.m in Sources */,
-				F9923ECD01B25A27A5CB320F34B59457 /* MagazineViewController-dummy.m in Sources */,
-				A1F48AC9D5B432187CF9EA4C3BD035B1 /* UINavigationController+CustomTransitions.m in Sources */,
-				C515F2D73323086CC091A22AA9AAC049 /* UIView+Geometry.m in Sources */,
-				BE76EB71C5060AEEE92DFF72F747F660 /* UIView+Rendering.m in Sources */,
+				53E32A3ABB26550EFB4F3B4F4F6EFCD0 /* ANPageIndicatorView.m in Sources */,
+				9DBA1241D34FDA11556DFF1C5E414E11 /* ANPageIndicatorView.xib in Sources */,
+				DD056648E30B7F0EAD6545D345E7F215 /* ANPageViewController+ANFlipSwipe.m in Sources */,
+				C58A23C07299CB3A8B7F4A1447CD9BA8 /* ANPageViewController+ANFlipSwipePrivate.m in Sources */,
+				49EE1930E9083A424AE796F34E253756 /* ANPageViewController.m in Sources */,
+				A53FEBEC16CEA33271B253C242455C7E /* MagazineViewController-dummy.m in Sources */,
+				1CB97FDA1E9DDC6B9E94CB606E864EC5 /* ThumbnailPageIndicator.png in Sources */,
+				3772E393D08E0AC9485C831D6DFDE7CC /* UINavigationController+CustomTransitions.m in Sources */,
+				EDFCC4F7CDE1A41A57BFEBBD2C55312E /* UIView+Geometry.m in Sources */,
+				9C7C1A513459F9CCE7C0213B7B12D172 /* UIView+Rendering.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +432,7 @@
 		A17334CCCE47BB6B846924E9A0FC824F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MagazineViewController;
-			target = 1FEA0E214E9544E283530EB45CC86C73 /* MagazineViewController */;
+			target = E05B0071EE4FF6985AA3D4B0EDACE173 /* MagazineViewController */;
 			targetProxy = A4FE8414BDA6A67C9990E566BAE35130 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -508,35 +509,6 @@
 			};
 			name = Debug;
 		};
-		9A6BFA32F0B5F7B75FBD4BFB5DD0967B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36038038656792CF89FBA984717223A /* MagazineViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MagazineViewController/MagazineViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MagazineViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MagazineViewController/MagazineViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MagazineViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A1C5B4C718CD2543BACB48FF1CC7A811 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 786D39F8DBB32EAA2595BCAC70D6A1E2 /* Pods-MagazineViewController_Tests.release.xcconfig */;
@@ -570,6 +542,35 @@
 			};
 			name = Release;
 		};
+		B0319771997F56EB27E9F38096634D5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B36038038656792CF89FBA984717223A /* MagazineViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagazineViewController/MagazineViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagazineViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagazineViewController/MagazineViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MagazineViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CAF3A0C9947666ACDF47C18B012041FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D46D7C57731152702524829DF65EFF9 /* Pods-MagazineViewController_Example.release.xcconfig */;
@@ -595,6 +596,35 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_MagazineViewController_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D0D17054D71DC745DD240F0393AD80A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B36038038656792CF89FBA984717223A /* MagazineViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagazineViewController/MagazineViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagazineViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagazineViewController/MagazineViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagazineViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,35 +675,6 @@
 			};
 			name = Debug;
 		};
-		EC8289A5909FF43668B91CDE13ABA71E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36038038656792CF89FBA984717223A /* MagazineViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MagazineViewController/MagazineViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MagazineViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MagazineViewController/MagazineViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MagazineViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		FFEDF405A3F6DBD4388661D44132C2D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A7F4153E9F9FDE651D9BBDB011CF0AB /* Pods-MagazineViewController_Tests.debug.xcconfig */;
@@ -710,6 +711,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0493554348DA57383AAE06C19F200491 /* Build configuration list for PBXNativeTarget "MagazineViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0319771997F56EB27E9F38096634D5D /* Debug */,
+				D0D17054D71DC745DD240F0393AD80A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -724,15 +734,6 @@
 			buildConfigurations = (
 				FFEDF405A3F6DBD4388661D44132C2D0 /* Debug */,
 				A1C5B4C718CD2543BACB48FF1CC7A811 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D613D8688E361D54116726A35223C3C7 /* Build configuration list for PBXNativeTarget "MagazineViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC8289A5909FF43668B91CDE13ABA71E /* Debug */,
-				9A6BFA32F0B5F7B75FBD4BFB5DD0967B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
