@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D7D97821D999E52001ECAEE /* UIViewController+Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D97811D999E52001ECAEE /* UIViewController+Demo.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		03AD2F8141F035E26CBE5FE7 /* Pods-MagazineViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagazineViewController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagazineViewController_Tests/Pods-MagazineViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D7D97801D999E52001ECAEE /* UIViewController+Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Demo.h"; sourceTree = "<group>"; };
+		0D7D97811D999E52001ECAEE /* UIViewController+Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Demo.m"; sourceTree = "<group>"; };
 		103DC32985A4B577FFA994A7 /* Pods_MagazineViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagazineViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		447362CE5BE03FC13F49DF83 /* Pods-MagazineViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagazineViewController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagazineViewController_Example/Pods-MagazineViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4E9746E22EA7BA28A7B4924F /* Pods-MagazineViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagazineViewController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagazineViewController_Example/Pods-MagazineViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				6003F59D195388D20070C39A /* MGZAppDelegate.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				0D7D97801D999E52001ECAEE /* UIViewController+Demo.h */,
+				0D7D97811D999E52001ECAEE /* UIViewController+Demo.m */,
 			);
 			name = "Example for MagazineViewController";
 			path = MagazineViewController;
@@ -381,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7D97821D999E52001ECAEE /* UIViewController+Demo.m in Sources */,
 				6003F59E195388D20070C39A /* MGZAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

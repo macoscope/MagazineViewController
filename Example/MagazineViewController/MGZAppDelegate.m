@@ -1,12 +1,5 @@
-//
-//  MGZAppDelegate.m
-//  MagazineViewController
-//
-//  Created by Bartek Chlebek on 09/20/2016.
-//  Copyright (c) 2016 Bartek Chlebek. All rights reserved.
-//
-
 #import "MGZAppDelegate.h"
+#import "UIViewController+Demo.h"
 @import MagazineViewController;
 
 @interface MGZAppDelegate () <MGZPageViewControllerDataSource>
@@ -45,9 +38,10 @@
 	}
 
 	_viewControllers = @[
-											 [self newViewControllerWithColor:[UIColor redColor]],
-											 [[UINavigationController alloc] initWithRootViewController:[UITableViewController new]],
-											 [self newImageViewController],
+											 [UIViewController viewControllerWithText:@"Page 1"],
+											 [UIViewController viewControllerWithText:@"Page 2"],
+											 [UIViewController viewControllerWithText:@"Page 3"],
+											 [UIViewController viewControllerWithText:@"Page 4"],
 											 ];
 
 	return _viewControllers;
@@ -68,31 +62,6 @@
 - (BOOL)shouldDisplayPageIndicator
 {
 	return YES;
-}
-
-#pragma mark - Helpers
-
-- (UIViewController *)newViewControllerWithColor:(UIColor *)color
-{
-	UIViewController *vc = [UIViewController new];
-	vc.view.backgroundColor = [UIColor redColor];
-	return vc;
-}
-
-- (UIViewController *)newImageViewController
-{
-	UIViewController *vc = [UIViewController new];
-
-	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img"]];
-	imageView.frame = vc.view.bounds;
-	imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	[vc.view addSubview:imageView];
-
-	UIView *orangeView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-	orangeView.backgroundColor = [UIColor orangeColor];
-	[vc.view addSubview:orangeView];
-
-	return vc;
 }
 
 @end
