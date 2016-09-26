@@ -1,0 +1,6 @@
+framework module MagazineViewController {
+  umbrella header "MagazineViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

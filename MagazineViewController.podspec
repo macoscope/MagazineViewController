@@ -1,42 +1,19 @@
-#
-# Be sure to run `pod lib lint MagazineViewController.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'MagazineViewController'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MagazineViewController.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.version          = '1.0.0'
+  s.summary          = 'A simple book-like paging view controller'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A simple paging view controller, with an interactive gesture, that mimics a magazine paging effect.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/MagazineViewController'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/macoscope/MagazineViewController'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Bartek Chlebek' => 'bartek.chlebek@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/MagazineViewController.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Macoscope' => 'bartek.chlebek@gmail.com' }
+  s.source           = { :git => 'https://github.com/macoscope/MagazineViewController.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/macoscope'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'MagazineViewController/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'MagazineViewController' => ['MagazineViewController/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.private_header_files = 'MagazineViewController/Classes/Private/**/*.h'
 end

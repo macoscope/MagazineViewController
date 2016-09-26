@@ -1,0 +1,6 @@
+framework module Pods_MagazineViewController_Tests {
+  umbrella header "Pods-MagazineViewController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
