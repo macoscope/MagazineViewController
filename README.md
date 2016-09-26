@@ -14,7 +14,7 @@ pod 'MagazineViewController', :git => 'https://github.com/macoscope/MagazineView
 
 ## Author
 
-[Macoscope](http://www.macoscope.com), [bartek@macoscope.com](bartek@macoscope.com)
+[Macoscope](http://www.macoscope.com), [info@macoscope.com](info@macoscope.com)
 
 ## License
 
